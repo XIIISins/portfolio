@@ -14,6 +14,26 @@ app.get('/health', (req, res) => {
   });
 });`
 
+  // Create a custom style that overrides the oneDark theme's background
+  const customStyle = {
+    ...oneDark,
+    'pre[class*="language-"]': {
+      ...oneDark['pre[class*="language-"]'],
+      background: 'transparent',
+      margin: 0,
+      padding: '1.5rem',
+      fontSize: '14px',
+      lineHeight: '1.6',
+      borderRadius: 0,
+      fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
+    },
+    'code[class*="language-"]': {
+      ...oneDark['code[class*="language-"]'],
+      background: 'transparent',
+      textShadow: 'none',
+    },
+  }
+
   return (
     <section className="relative mt-10 md:mt-14">
       <div className="relative overflow-hidden rounded-xl border border-white/12 bg-black/20 backdrop-blur-sm shadow-2xl">
@@ -32,16 +52,7 @@ app.get('/health', (req, res) => {
           <div className="max-h-[44vh] overflow-auto">
             <SyntaxHighlighter
               language="javascript"
-              style={oneDark}
-              customStyle={{
-                margin: 0,
-                padding: '1.5rem',
-                fontSize: '14px',
-                lineHeight: '1.6',
-                background: 'transparent',
-                borderRadius: 0,
-                fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
-              }}
+              style={customStyle}
               showLineNumbers={false}
               wrapLines={true}
               lineNumberStyle={{
