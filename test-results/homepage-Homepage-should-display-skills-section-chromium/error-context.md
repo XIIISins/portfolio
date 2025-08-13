@@ -1,0 +1,80 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - navigation:
+    - text: MJ Myron Janssen
+    - link "Work":
+      - /url: "#"
+    - link "Code":
+      - /url: "#"
+    - link "SKills":
+      - /url: "#"
+    - button "GitHub":
+      - img
+      - text: GitHub
+    - button "Resume":
+      - img
+      - text: Resume
+- main:
+  - heading "Senior Platform / Infrastructure Engineer → Software / SRE" [level=1]
+  - paragraph: Portfolio showcasing systems work, developer tooling, and reliability engineering — now pivoting deeper into software and SRE.
+  - text: "js — proxy.js const express = require('express'); const app = express(); app.get('/health', (req, res) => { res.json({ status: 'ok', timestamp: new Date().toISOString(), service: 'Proxy (Node.js)', version: '1.0.1' }); });"
+  - img
+  - heading "Linux Platform & Virtualization" [level=3]
+  - paragraph: RHEL/OL, VMware/OLVM, capacity & performance
+  - img
+  - heading "Automation & IaC" [level=3]
+  - paragraph: Ansible, Terraform, Bash/Python
+  - img
+  - heading "Databases" [level=3]
+  - paragraph: MySQL/MariaDB HA (replication, multi-master), PostgreSQL
+  - img
+  - heading "Reliability & Observability" [level=3]
+  - paragraph: SRE practices, Zabbix, runbooks, incident response
+  - img
+  - heading "Backup & DR" [level=3]
+  - paragraph: XtraBackup, Veeam, RMAN, PITR, recovery drills
+  - img
+  - heading "CI/CD & Software Development" [level=3]
+  - paragraph: Jenkins, Rundeck, GitHub Actions, code quality, TypeScript/Node, Docker
+  - heading "Professional experience" [level=4]
+  - heading "SORSIT" [level=3]
+  - text: Linux Engineer 2024-present Lead Linux upgrade projects for enterprise customers. Implemented high-availability OLVM environments. Upgrade existing OLVM environments for improved performance and reliability. Built custom Ansible interface to integrate with ZohoVault.
+  - heading "Accenture" [level=3]
+  - text: IT Analyst 2023-2024 Maintained and optimized infrastructure for internal systems. Implemented automation with Ansible. Supported containerized workloads on virtual machines. Assisted in modernization initiatives for internal systems.
+  - heading "Sentia" [level=3]
+  - text: IT Consultant 2015-2023 Managed VMware environments ensuring 99.9%+ uptime. Automated provisioning, configuration management and maintenance of systems using Ansible and Bash. Deployed HA services with HAProxy and Keepalived. Monitored systems with Zabbix.
+  - heading "Yenlo" [level=3]
+  - text: Consultant 2012-2015 Provided system administration and automation support for internal and client environments. Deployed and maintained Apache/Nginx web servers and backend databases. Participated in infrastructure modernization projects.
+  - heading "Secondary accent examples" [level=4]
+  - text: "Primary: #2d5ce0 Secondary #E02DB7"
+  - button "Primary + Secondary":
+    - img
+    - text: Primary + Secondary
+  - text: "Secondary #12D6C7"
+  - button "Primary + Secondary":
+    - img
+    - text: Primary + Secondary
+  - text: "Secondary #FF9A2E"
+  - button "Primary + Secondary":
+    - img
+    - text: Primary + Secondary
+  - paragraph: © 2025 Myron Janssen
+  - button "GitHub":
+    - img
+    - text: GitHub
+  - button "LinkedIn":
+    - img
+    - text: LinkedIn
+  - button "Contact":
+    - img
+    - text: Contact
+  - button "Privacy":
+    - img
+    - text: Privacy
+  - button "Terms":
+    - img
+    - text: Terms
+- alert
+```
