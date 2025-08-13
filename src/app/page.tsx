@@ -42,7 +42,7 @@ export default function HomePage() {
               <div className="flex items-center gap-2">
                 <Layers className="h-4 w-4 text-cyan-300" />
                 <CardTitle>Linux Platform & Virtualization</CardTitle>
-                </div>
+              </div>
             </CardHeader>
             <CardContent>
               <CardDescription>RHEL/OL, VMware/OLVM, capacity & performance</CardDescription>
@@ -54,10 +54,10 @@ export default function HomePage() {
               <div className="flex items-center gap-2">
                 <Sparkles className="h-4 w-4 text-fuchsia-300" />
                 <CardTitle>Automation & IaC</CardTitle>
-                </div>
+              </div>
             </CardHeader>
             <CardContent>
-                <CardDescription>Ansible, Terraform, Bash/Python</CardDescription>
+              <CardDescription>Ansible, Terraform, Bash/Python</CardDescription>
             </CardContent>
           </Card>
           
@@ -66,7 +66,7 @@ export default function HomePage() {
               <div className="flex items-center gap-2">
                 <MoveHorizontal className="h-4 w-4 text-emerald-300" />
                 <CardTitle>Databases</CardTitle>
-                </div>
+              </div>
             </CardHeader>
             <CardContent>
               <CardDescription>MySQL/MariaDB HA (replication, multi-master), PostgreSQL</CardDescription>
@@ -120,30 +120,30 @@ export default function HomePage() {
                   <CardTitle>SORSIT</CardTitle>
                   <span className="inline-flex h-3 w-3 rounded-full" style={{ backgroundColor: '#a100ff' }}></span>
               </div>
-              <CardDescription>
-                  <p>
+              <div className="text-sm text-slate-300/80">
+                  <div>
                     <span className="text-s text-slate-300/80">Linux Engineer</span>
-                  </p>
-                  <p>
+                  </div>
+                  <div>
                     <span className="text-xs text-slate-300/80">2024-present</span>
-                  </p>
-                  <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                  </div>
+                  <div className="flex items-start gap-2 text-xs text-slate-300/80">
                     <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                     <span>Lead Linux upgrade projects for enterprise customers.</span>
-                  </p>
-                  <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                  </div>
+                  <div className="flex items-start gap-2 text-xs text-slate-300/80">
                     <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                     <span>Implemented high-availability OLVM environments.</span>
-                  </p>
-                  <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                  </div>
+                  <div className="flex items-start gap-2 text-xs text-slate-300/80">
                     <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                     <span>Upgrade existing OLVM environments for improved performance and reliability.</span>
-                  </p>
-                  <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                  </div>
+                  <div className="flex items-start gap-2 text-xs text-slate-300/80">
                     <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                     <span>Built custom Ansible interface to integrate with ZohoVault.</span>
-                  </p>
-              </CardDescription>
+                  </div>
+              </div>
             </div>
 
             <div className="rounded-lg border border-white/10 p-3">
@@ -151,30 +151,30 @@ export default function HomePage() {
                 <CardTitle>Accenture</CardTitle>
                 <span className="inline-flex h-3 w-3 rounded-full" style={{ backgroundColor: '#a100ff' }}></span>
               </div>
-              <CardDescription>
-                <p>
+              <div className="text-sm text-slate-300/80">
+                <div>
                   <span className="text-s text-slate-300/80">IT Analyst</span>
-                </p>
-                <p>
+                </div>
+                <div>
                   <span className="text-xs text-slate-300/80">2023-2024</span>
-                </p>
-                <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                   <span>Maintained and optimized infrastructure for internal systems.</span>
-                </p>
-                <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                   <span>Implemented automation with Ansible.</span>
-                </p>
-                <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                   <span>Supported containerized workloads on virtual machines.</span>
-                </p>
-                <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                   <span>Assisted in modernization initiatives for internal systems.</span>
-                </p>
-              </CardDescription>
+                </div>
+              </div>
             </div>
 
             <div className="rounded-lg border border-white/10 p-3">
@@ -182,30 +182,30 @@ export default function HomePage() {
                 <CardTitle>Sentia</CardTitle>
                 <span className="inline-flex h-3 w-3 rounded-full" style={{ backgroundColor: '#ffb423' }}></span>
               </div>
-              <CardDescription>
-                <p>
+              <div className="text-sm text-slate-300/80">
+                <div>
                   <span className="text-s text-slate-300/80">IT Consultant</span>
-                </p>
-                <p>
+                </div>
+                <div>
                   <span className="text-xs text-slate-300/80">2015-2023</span>
-                </p>
-                <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                   <span>Managed VMware environments ensuring 99.9%+ uptime.</span>
-                </p>
-                <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                   <span>Automated provisioning, configuration management and maintenance of systems using Ansible and Bash.</span>
-                </p>
-                <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                   <span>Deployed HA services with HAProxy and Keepalived.</span>
-                </p>
-                <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                   <span>Monitored systems with Zabbix.</span>
-                </p>
-              </CardDescription>
+                </div>
+              </div>
             </div>
 
             <div className="rounded-lg border border-white/10 p-3">
@@ -213,32 +213,30 @@ export default function HomePage() {
                 <CardTitle>Yenlo</CardTitle>
                 <span className="inline-flex h-3 w-3 rounded-full" style={{ backgroundColor: '#5793db' }}></span>
               </div>
-              <CardDescription>
-                <p>
+              <div className="text-sm text-slate-300/80">
+                <div>
                   
                   <span className="text-s text-slate-300/80">Consultant</span>
-                </p>
-                <p>
+                </div>
+                <div>
                   <span className="text-xs text-slate-300/80">2012-2015</span>
-                </p>
-                <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                   <span>Provided system administration and automation support for internal and client environments.</span>
-                </p>
-                <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                   <span>Deployed and maintained Apache/Nginx web servers and backend databases.</span>
-                </p>
-                <p className="flex items-start gap-2 text-xs text-slate-300/80">
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#E02DB7' }}></span>
                   <span>Participated in infrastructure modernization projects.</span>
-                </p>
-              </CardDescription>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-
-
 
         {/* Secondary accent examples */}
         <section className="mt-8 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">

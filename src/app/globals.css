@@ -70,4 +70,6 @@
   .vignette {
     @apply bg-[radial-gradient(120%_120%_at_50%_10%,rgba(45,92,224,0.14),transparent_52%)];
   }
+  
+
 }
