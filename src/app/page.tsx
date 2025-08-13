@@ -5,6 +5,17 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { FileText, Flame, Github, Layers, Mail, MoveHorizontal, Play, Rocket, Shield, Sparkles, Zap, Linkedin } from 'lucide-react'
 
+const about = `
+I build calm systems and useful little tools.
+Linux-first: RHEL/OL/EL on KVM/OLVM/VMware.
+Ansible, Rundeck, Docker; simple pipelines.
+Prefer clarity: tidy cutovers, readable docs.
+Monitoring-agnostic; most time with Zabbix
+(through Apr 2024), happy to adapt.
+Alerts that matter; noise kept low.
+Off-hours: coffee, trails, a bit of tinkering.
+`;
+
 export default function HomePage() {
   return (
     <>
@@ -15,10 +26,10 @@ export default function HomePage() {
         {/* Hero */}
         <section className="relative">
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-white">
-            Senior Platform / Infrastructure Engineer → Software / SRE
+            Platform Engineer building paved roads for developers.
           </h1>
           <p className="mt-4 max-w-2xl text-base md:text-lg text-slate-300/80">
-            Portfolio showcasing systems work, developer tooling, and reliability engineering — now pivoting deeper into software and SRE.
+            Linux/KVM, IaC, and product-minded automation.
           </p>
 
           {/* <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -33,7 +44,40 @@ export default function HomePage() {
           </div> */}
         </section>
 
-        <Terminal />
+        {/* Terminal and About Section */}
+        <section className="mt-10 md:mt-14 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Terminal - takes 2/3 of the space */}
+          <div className="lg:col-span-2">
+            <Terminal />
+          </div>
+          
+          {/* About - takes 1/3 of the space */}
+          <div className="lg:col-span-1">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur h-full">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-8 w-8 rounded-full bg-gradient-to-br from-cyan-400 to-fuchsia-400 flex items-center justify-center">
+                  <span className="text-sm font-semibold text-white">MJ</span>
+                </div>
+                <h4 className="text-base md:text-lg font-semibold tracking-tight text-white/90">About</h4>
+              </div>
+              <div className="space-y-4">
+                <p className="text-sm text-slate-300/80 leading-relaxed" >
+                {about}
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-sm text-slate-300/80">
+                    <span className="inline-flex h-2 w-2 rounded-full" style={{ backgroundColor: '#12D6C7' }}></span>
+                    <span>Based in the Netherlands</span>
+                  {/* </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300/80"> */}
+                    <span className="inline-flex h-2 w-2 rounded-full" style={{ backgroundColor: '#12D6C7' }}></span>
+                    <span>Remote-first</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Cards */}
         <section className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">

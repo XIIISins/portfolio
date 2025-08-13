@@ -2,17 +2,17 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 export function Terminal() {
-  const code = `const express = require('express');
-const app = express();
-
-app.get('/health', (req, res) => {
-  res.json({ 
-    status: 'ok', 
-    timestamp: new Date().toISOString(),
-    service: 'Proxy (Node.js)',
-    version: '1.0.1'
-  });
-});`
+  const code = `1. | const express = require('express');
+2. | const app = express();
+3. |
+4. | app.get('/health', (req, res) => {
+5. |   res.json({ 
+6. |     status: 'ok', 
+7. |     timestamp: new Date().toISOString(),
+8. |     service: 'Proxy (Node.js)',
+9. |     version: '1.0.1'
+10.|   });
+11.| });`
 
   // Create a custom style that overrides the oneDark theme's background
   const customStyle = {
@@ -35,7 +35,7 @@ app.get('/health', (req, res) => {
   }
 
   return (
-    <section className="relative mt-10 md:mt-14">
+    <section className="relative">
       <div className="relative overflow-hidden rounded-xl border border-white/12 bg-black/20 backdrop-blur-sm shadow-2xl">
         {/* Terminal top bar */}
         <div className="flex items-center gap-2 px-4 py-3 bg-slate-900/80 border-b border-white/10">
