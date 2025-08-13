@@ -16,17 +16,37 @@ test.describe('Homepage', () => {
     
     // Check navbar elements - use more specific selectors
     await expect(page.locator('nav').getByText('Myron Janssen')).toBeVisible()
-    await expect(page.getByText('Work')).toBeVisible()
-    await expect(page.getByText('Code')).toBeVisible()
-    await expect(page.getByText('SKills')).toBeVisible()
-    await expect(page.locator('nav').getByText('GitHub')).toBeVisible()
-    await expect(page.locator('nav').getByText('Resume')).toBeVisible()
+    
+    // Check navigation links - these are hidden on mobile, so check based on viewport
+    const viewport = page.viewportSize()
+    if (viewport && viewport.width >= 768) {
+      // Desktop: navigation links should be visible
+      await expect(page.locator('nav').getByRole('link', { name: 'Work' })).toBeVisible()
+      await expect(page.locator('nav').getByRole('link', { name: 'Code' })).toBeVisible()
+      await expect(page.locator('nav').getByRole('link', { name: 'SKills' })).toBeVisible()
+    } else {
+      // Mobile: navigation links should be hidden
+      await expect(page.locator('nav').getByRole('link', { name: 'Work' })).not.toBeVisible()
+      await expect(page.locator('nav').getByRole('link', { name: 'Code' })).not.toBeVisible()
+      await expect(page.locator('nav').getByRole('link', { name: 'SKills' })).not.toBeVisible()
+    }
+    
+    // Check buttons - GitHub is hidden on small screens, Resume is always visible
+    if (viewport && viewport.width >= 640) {
+      // Desktop: both buttons should be visible
+      await expect(page.locator('nav').getByText('GitHub')).toBeVisible()
+      await expect(page.locator('nav').getByText('Resume')).toBeVisible()
+    } else {
+      // Mobile: GitHub is hidden, Resume is visible
+      await expect(page.locator('nav').getByText('GitHub')).not.toBeVisible()
+      await expect(page.locator('nav').getByText('Resume')).toBeVisible()
+    }
   })
 
   test('should display terminal component', async ({ page }) => {
     await page.goto('/')
     
-    // Check terminal window - use more specific selector
+    // Check terminal window - use the correct class
     await expect(page.locator('.bg-slate-900\\/60')).toBeVisible()
     
     // Check terminal header with dots
@@ -42,32 +62,30 @@ test.describe('Homepage', () => {
   test('should display professional experience cards', async ({ page }) => {
     await page.goto('/')
     
-    // Check experience cards - use more specific text
-    await expect(page.getByText('Linux Engineer')).toBeVisible()
-    await expect(page.getByText('IT Analyst')).toBeVisible()
-    await expect(page.getByText('IT Consultant')).toBeVisible()
-    // Remove the duplicate "Consultant" test since it conflicts with "IT Consultant"
+    // Check experience cards - use the actual company names
+    await expect(page.getByText('SORSIT')).toBeVisible()
+    await expect(page.getByText('Accenture')).toBeVisible()
+    await expect(page.getByText('Sentia')).toBeVisible()
+    await expect(page.getByText('Yenlo')).toBeVisible()
   })
 
   test('should display skills section', async ({ page }) => {
     await page.goto('/')
     
-    // Check skills heading - use the actual heading text
-    await expect(page.getByRole('heading', { name: /Skills & Technologies/i })).toBeVisible()
-    
-    // Check some key skills
-    await expect(page.getByText('Linux')).toBeVisible()
-    await expect(page.getByText('Docker')).toBeVisible()
-    await expect(page.getByText('Kubernetes')).toBeVisible()
+    // Check skills cards - these are the actual skill categories on the page
+    await expect(page.getByRole('heading', { name: 'Linux Platform & Virtualization' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Automation & IaC' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Databases' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Reliability & Observability' })).toBeVisible()
   })
 
   test('should display footer with social links', async ({ page }) => {
     await page.goto('/')
     
     // Check footer buttons - use more specific selectors to avoid navbar conflicts
-    await expect(page.locator('main').getByRole('button', { name: /GitHub/i })).toBeVisible()
-    await expect(page.locator('main').getByRole('button', { name: /LinkedIn/i })).toBeVisible()
-    await expect(page.locator('main').getByRole('button', { name: /Email/i })).toBeVisible()
+    await expect(page.locator('footer').getByRole('button', { name: /GitHub/i })).toBeVisible()
+    await expect(page.locator('footer').getByRole('button', { name: /LinkedIn/i })).toBeVisible()
+    await expect(page.locator('footer').getByRole('button', { name: /Contact/i })).toBeVisible()
   })
 
   test('should have proper responsive design', async ({ page }) => {
