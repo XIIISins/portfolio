@@ -1,4 +1,19 @@
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+
 export function Terminal() {
+  const code = `const express = require('express');
+const app = express();
+
+app.get('/health', (req, res) => {
+  res.json({ 
+    status: 'ok', 
+    timestamp: new Date().toISOString(),
+    service: 'Proxy (Node.js)',
+    version: '1.0.1'
+  });
+});`
+
   return (
     <section className="relative mt-10 md:mt-14">
       <div className="relative overflow-hidden rounded-xl border border-white/12 bg-black/20 backdrop-blur-sm shadow-2xl">
@@ -12,21 +27,31 @@ export function Terminal() {
           <div className="ml-3 text-xs font-mono text-slate-300/90 truncate">js — proxy.js</div>
         </div>
 
-        {/* Code area with proper terminal styling */}
+        {/* Code area with syntax highlighting */}
         <div className="relative bg-slate-900/60">
-          <pre className="relative m-0 max-h-[44vh] overflow-auto p-6 text-[14px] leading-relaxed font-mono text-slate-200 whitespace-pre">
-{`const express = require('express');
-const app = express();
-
-app.get('/health', (req, res) => {
-  res.json({ 
-    status: 'ok', 
-    timestamp: new Date().toISOString(),
-    service: 'Proxy (Node.js)',
-    version: '1.0.1'
-  });
-});`}
-          </pre>
+          <div className="max-h-[44vh] overflow-auto">
+            <SyntaxHighlighter
+              language="javascript"
+              style={oneDark}
+              customStyle={{
+                margin: 0,
+                padding: '1.5rem',
+                fontSize: '14px',
+                lineHeight: '1.6',
+                background: 'transparent',
+                borderRadius: 0,
+                fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
+              }}
+              showLineNumbers={false}
+              wrapLines={true}
+              lineNumberStyle={{
+                color: '#6b7280',
+                fontSize: '12px',
+              }}
+            >
+              {code}
+            </SyntaxHighlighter>
+          </div>
         </div>
       </div>
     </section>

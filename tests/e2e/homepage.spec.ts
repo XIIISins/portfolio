@@ -49,14 +49,15 @@ test.describe('Homepage', () => {
     // Check terminal window - use the correct class
     await expect(page.locator('.bg-slate-900\\/60')).toBeVisible()
     
-    // Check terminal header with dots
-    await expect(page.locator('.bg-red-500')).toBeVisible()
-    await expect(page.locator('.bg-yellow-500')).toBeVisible()
-    await expect(page.locator('.bg-green-500')).toBeVisible()
+    // Check terminal header exists
+    await expect(page.locator('.bg-slate-900\\/80')).toBeVisible()
     
     // Check terminal content has code
     await expect(page.locator('pre')).toBeVisible()
     await expect(page.locator('pre')).toContainText('const express = require')
+    
+    // Check terminal filename
+    await expect(page.locator('div.text-xs.font-mono')).toContainText('proxy.js')
   })
 
   test('should display professional experience cards', async ({ page }) => {
