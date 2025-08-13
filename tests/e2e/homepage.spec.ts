@@ -8,7 +8,7 @@ test.describe('Homepage', () => {
     await expect(page).toHaveTitle(/Portfolio/)
     
     // Check main heading
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('Senior Platform / Infrastructure Engineer')
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Platform Engineer building paved roads for developers.')
   })
 
   test('should display navbar with all elements', async ({ page }) => {
@@ -54,10 +54,10 @@ test.describe('Homepage', () => {
     
     // Check terminal content has code
     await expect(page.locator('pre')).toBeVisible()
-    await expect(page.locator('pre')).toContainText('const express = require')
+    await expect(page.locator('pre')).toContainText('Harden CentOS 9 System')
     
     // Check terminal filename
-    await expect(page.locator('div.text-xs.font-mono')).toContainText('proxy.js')
+    await expect(page.locator('div.text-xs.font-mono')).toContainText('~/homelab/playbooks/baseline.yml')
   })
 
   test('should display professional experience cards', async ({ page }) => {

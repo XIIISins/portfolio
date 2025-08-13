@@ -24,7 +24,7 @@ describe('Navbar', () => {
     render(<Navbar />)
     const avatar = screen.getByText('MJ')
     expect(avatar).toBeInTheDocument()
-    expect(avatar.closest('div')).toHaveClass('h-6', 'w-6', 'text-white', 'justify-center', 'items-center')
+    expect(avatar.closest('div')).toHaveClass('h-8', 'w-8', 'rounded-full', 'bg-gradient-to-br', 'from-cyan-400', 'to-fuchsia-400', 'flex', 'items-center', 'justify-center')
   })
 
   it('has proper navigation structure', () => {

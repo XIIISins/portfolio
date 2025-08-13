@@ -3,7 +3,23 @@ import { Navbar } from '@/components/navbar'
 import { Terminal } from '@/components/terminal'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { FileText, Flame, Github, Layers, Mail, MoveHorizontal, Play, Rocket, Shield, Sparkles, Zap, Linkedin } from 'lucide-react'
+import { 
+  FileText, 
+  Flame, 
+  Github, 
+  Mail, 
+  MoveHorizontal, 
+  Shield, 
+  Sparkles, 
+  Zap, 
+  Linkedin, 
+  Database, 
+  Workflow, 
+  Server, 
+  Binoculars,
+  History,
+  GitMerge,
+} from 'lucide-react'
 
 const about = `
 I build calm systems and useful little tools.
@@ -22,7 +38,7 @@ export default function HomePage() {
       <Background />
       <Navbar />
 
-      <main className="relative mx-auto w-[min(1200px,92%)] pt-36 md:pt-40">
+      <main className="relative mx-auto w-[92%] pt-36 md:pt-32">
         {/* Hero */}
         <section className="relative">
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-white">
@@ -45,7 +61,7 @@ export default function HomePage() {
         </section>
 
         {/* Terminal and About Section */}
-        <section className="mt-10 md:mt-14 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <section className="mt-10 md:mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Terminal - takes 2/3 of the space */}
           <div className="lg:col-span-2">
             <Terminal />
@@ -80,11 +96,11 @@ export default function HomePage() {
         </section>
 
         {/* Cards */}
-        <section className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
+        <section className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2">
-                <Layers className="h-4 w-4 text-cyan-300" />
+                <Server className="h-4 w-4 text-cyan-300" />
                 <CardTitle>Linux Platform & Virtualization</CardTitle>
               </div>
             </CardHeader>
@@ -96,7 +112,7 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-fuchsia-300" />
+                <Workflow className="h-4 w-4 text-fuchsia-300" />
                 <CardTitle>Automation & IaC</CardTitle>
               </div>
             </CardHeader>
@@ -108,7 +124,7 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2">
-                <MoveHorizontal className="h-4 w-4 text-emerald-300" />
+                <Database className="h-4 w-4 text-emerald-300" />
                 <CardTitle>Databases</CardTitle>
               </div>
             </CardHeader>
@@ -120,7 +136,7 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2">
-                <MoveHorizontal className="h-4 w-4 text-emerald-300" />
+                <Binoculars className="h-4 w-4 text-emerald-300" />
                 <CardTitle>Reliability & Observability</CardTitle>
               </div>
             </CardHeader>
@@ -132,7 +148,7 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2">
-                <MoveHorizontal className="h-4 w-4 text-emerald-300" />
+                <History className="h-4 w-4 text-emerald-300" />
                 <CardTitle>Backup & DR</CardTitle>
               </div>
             </CardHeader>
@@ -144,7 +160,7 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2">
-                <MoveHorizontal className="h-4 w-4 text-emerald-300" />
+                <GitMerge className="h-4 w-4 text-emerald-300" />
                 <CardTitle>CI/CD & Software Development</CardTitle>
               </div>
             </CardHeader>
@@ -278,53 +294,6 @@ export default function HomePage() {
                   <span>Participated in infrastructure modernization projects.</span>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Secondary accent examples */}
-        <section className="mt-8 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-          <div className="flex items-center justify-between gap-3 flex-wrap">
-            <h4 className="text-base md:text-lg font-semibold tracking-tight text-white/90">Secondary accent examples</h4>
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-300/80">Primary: #2d5ce0</span>
-            </div>
-          </div>
-          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
-            {/* Secondary: #E02DB7 */}
-            <div className="rounded-lg border border-white/10 p-3">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-slate-300/80">Secondary #E02DB7</span>
-                <span className="inline-flex h-3 w-3 rounded-full" style={{ backgroundColor: '#E02DB7' }}></span>
-              </div>
-              <Button variant="gradient-primary" className="mt-3 w-full" style={{ background: 'linear-gradient(to bottom right, #2d5ce0, #E02DB7)' }}>
-                <Zap className="h-4 w-4" />
-                <span>Primary + Secondary</span>
-              </Button>
-            </div>
-
-            {/* Secondary: #12D6C7 */}
-            <div className="rounded-lg border border-white/10 p-3">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-slate-300/80">Secondary #12D6C7</span>
-                <span className="inline-flex h-3 w-3 rounded-full" style={{ backgroundColor: '#12D6C7' }}></span>
-              </div>
-              <Button variant="gradient-primary" className="mt-3 w-full">
-                <Sparkles className="h-4 w-4" />
-                <span>Primary + Secondary</span>
-              </Button>
-            </div>
-
-            {/* Secondary: #FF9A2E */}
-            <div className="rounded-lg border border-white/10 p-3">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-slate-300/80">Secondary #FF9A2E</span>
-                <span className="inline-flex h-3 w-3 rounded-full" style={{ backgroundColor: '#FF9A2E' }}></span>
-              </div>
-              <Button variant="gradient-primary" className="mt-3 w-full" style={{ background: 'linear-gradient(to bottom right, #2d5ce0, #FF9A2E)' }}>
-                <Flame className="h-4 w-4" />
-                <span>Primary + Secondary</span>
-              </Button>
             </div>
           </div>
         </section>

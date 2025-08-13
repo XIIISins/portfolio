@@ -1,9 +1,9 @@
 import { Button } from '@/components/ui/button'
-import { Github, ScrollText } from 'lucide-react'
+import { GithubIcon, ScrollText } from 'lucide-react'
 
 export function Navbar() {
   return (
-    <header className="fixed top-6 left-1/2 z-50 w-[min(1200px,92%)] -translate-x-1/2">
+    <header className="fixed top-6 left-1/2 z-50 w-[92%] -translate-x-1/2">
       <nav className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md shadow-glass">
         <div className="flex items-center gap-2 min-w-0">
           <div className="h-8 w-8 rounded-full bg-gradient-to-br from-cyan-400 to-fuchsia-400 flex items-center justify-center">
@@ -20,7 +20,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2 min-w-0">
           <Button variant="outline-glass" size="sm" className="hidden sm:inline-flex gap-2" style={{  background: 'linear-gradient(to bottom right, #2d5ce0, #12D6C7)' }}>
-            <Github className="h-4 w-4 text-white/90" />
+            <GithubIcon className="h-4 w-4 text-white/90" />
             <span className="truncate max-w-[160px]">GitHub</span>
           </Button>
           <Button variant="gradient-primary" size="sm" className="gap-2" style={{  background: 'linear-gradient(to bottom right, #2d5ce0, #E02DB7)' }}>
