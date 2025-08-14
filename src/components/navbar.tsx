@@ -48,7 +48,13 @@ export function Navbar() {
             className="hidden sm:inline-flex gap-2"
           >
             <GithubIcon className="h-4 w-4 text-white/90" />
-            <span className="truncate max-w-[160px]">GitHub</span>
+            <Link
+              href="https://github.com/XIIISins"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="truncate max-w-[160px]">GitHub</span>
+            </Link>
           </Button>
           <Button variant="gradient-accent" size="sm" className="gap-2">
             <ScrollText className="h-4 w-4" />
