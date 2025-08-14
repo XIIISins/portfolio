@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { FileText, Github, Linkedin, Mail, Shield } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -8,23 +9,29 @@ export function Footer() {
       <div className="flex items-center gap-2">
         <Button variant="outline-glass" size="sm" className="gap-2">
           <Github className="h-4 w-4" />
-          <span className="truncate max-w-[160px]">GitHub</span>
+          <Link
+            href="https://github.com/XIIISins"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="truncate max-w-[160px]">GitHub</span>
+          </Link>
         </Button>
         <Button variant="outline-glass" size="sm" className="gap-2">
           <Linkedin className="h-4 w-4" />
-          <span className="truncate max-w-[160px]">LinkedIn</span>
+          <Link
+            href="https://www.linkedin.com/in/myron-janssen-60335565/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="truncate max-w-[160px]">LinkedIn</span>
+          </Link>
         </Button>
         <Button variant="outline-glass" size="sm" className="gap-2">
           <Mail className="h-4 w-4" />
-          <span className="truncate max-w-[160px]">Contact</span>
-        </Button>
-        <Button variant="outline-glass" size="sm" className="gap-2">
-          <Shield className="h-4 w-4" />
-          <span className="truncate max-w-[160px]">Privacy</span>
-        </Button>
-        <Button variant="outline-glass" size="sm" className="gap-2">
-          <FileText className="h-4 w-4" />
-          <span className="truncate max-w-[160px]">Terms</span>
+          <Link href="mailto:contact@myronjanssen.dev">
+            <span className="truncate max-w-[160px]">Contact</span>
+          </Link>
         </Button>
       </div>
     </footer>
