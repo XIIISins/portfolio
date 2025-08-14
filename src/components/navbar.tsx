@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { GithubIcon, ScrollText } from 'lucide-react'
+import Link from 'next/link'
 
 export function Navbar() {
   return (
@@ -7,15 +8,15 @@ export function Navbar() {
       <nav className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md shadow-glass">
         <div className="flex items-center gap-2 min-w-0">
           <div className="h-8 w-8 rounded-full bg-gradient-to-br from-cyan-400 to-fuchsia-400 flex items-center justify-center">
-            <span className="text-sm font-semibold text-white">MJ</span>
+            <Link href="/" className="text-sm font-semibold text-white">MJ</Link>
           </div>
-          <span className="truncate text-sm font-semibold text-white/90 tracking-tight">Myron Janssen</span>
+          <Link href="/" className="text-sm font-semibold text-white/90 tracking-tight">Myron Janssen</Link>
         </div>
 
         <div className="hidden md:flex items-center gap-2">
-          <a href="#" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-200/90 hover:text-white hover:bg-white/5 transition-colors">Work</a>
+          <Link href="/work" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-200/90 hover:text-white hover:bg-white/5 transition-colors">Work</Link>
           <a href="#" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-200/90 hover:text-white hover:bg-white/5 transition-colors">Code</a>
-          <a href="#" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-200/90 hover:text-white hover:bg-white/5 transition-colors">SKills</a>
+          <a href="#" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-200/90 hover:text-white hover:bg-white/5 transition-colors">Skills</a>
         </div>
 
         <div className="flex items-center gap-2 min-w-0">

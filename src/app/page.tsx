@@ -1,17 +1,9 @@
-import { Background } from '@/components/background'
-import { Navbar } from '@/components/navbar'
 import { Terminal } from '@/components/terminal'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { 
-  FileText, 
-  Flame, 
   Github, 
   Mail, 
-  MoveHorizontal, 
-  Shield, 
-  Sparkles, 
-  Zap, 
   Linkedin, 
   Database, 
   Workflow, 
@@ -34,11 +26,7 @@ Off-hours: coffee, trails, a bit of tinkering.
 
 export default function HomePage() {
   return (
-    <>
-      <Background />
-      <Navbar />
-
-      <main className="relative mx-auto w-[92%] pt-36 md:pt-32">
+    <main className="relative mx-auto w-[92%] pt-36 md:pt-32">
         {/* Hero */}
         <section className="relative">
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-white">
@@ -297,34 +285,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        {/* Footer */}
-        <footer className="mt-14 mb-10 flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-xs text-slate-400/80">© 2025 Myron Janssen</p>
-          <div className="flex items-center gap-2">
-            <Button variant="outline-glass" size="sm" className="gap-2">
-              <Github className="h-4 w-4" />
-              <span className="truncate max-w-[160px]">GitHub</span>
-            </Button>
-            <Button variant="outline-glass" size="sm" className="gap-2">
-              <Linkedin className="h-4 w-4" />
-              <span className="truncate max-w-[160px]">LinkedIn</span>
-            </Button>
-            <Button variant="outline-glass" size="sm" className="gap-2">
-              <Mail className="h-4 w-4" />
-              <span className="truncate max-w-[160px]">Contact</span>
-            </Button>
-            <Button variant="outline-glass" size="sm" className="gap-2">
-              <Shield className="h-4 w-4" />
-              <span className="truncate max-w-[160px]">Privacy</span>
-            </Button>
-            <Button variant="outline-glass" size="sm" className="gap-2">
-              <FileText className="h-4 w-4" />
-              <span className="truncate max-w-[160px]">Terms</span>
-            </Button>
-          </div>
-        </footer>
       </main>
-    </>
   )
 }
