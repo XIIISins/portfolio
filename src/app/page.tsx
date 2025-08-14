@@ -58,7 +58,7 @@ export default function HomePage() {
               </h4>
             </div>
             <div className="space-y-4">
-              <p className="text-sm text-slate-300/80 leading-relaxed">
+              <p className="text-sm text-slate-200/90 leading-relaxed">
                 {about}
               </p>
               <div className="space-y-2">
