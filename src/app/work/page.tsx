@@ -162,7 +162,7 @@ export default function WorkPage() {
                 ></span>
                 <span>
                   Implemented automated fixes for alerts that were recurring and
-                  had documented solutions.
+                  had documented solutions but no structural fixes.
                 </span>
               </div>
             </div>
