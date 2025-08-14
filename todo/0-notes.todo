@@ -1,0 +1,14 @@
+Priority Guidelines
+High Priority
+Critical for user experience and maintainability
+Medium Priority
+Important for SEO, performance, and accessibility
+Low Priority
+Nice-to-have features and enhancements
+
+Resources
+  [Next.js Documentation](https://nextjs.org/docs)
+  [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+  [Radix UI Documentation](https://www.radix-ui.com/docs)
+  [Web Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
+  [Web Vitals](https://web.dev/vitals/)

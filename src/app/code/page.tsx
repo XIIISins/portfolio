@@ -1,4 +1,5 @@
-import { Code, Link } from "lucide-react";
+import { Code, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { Button } from "../../components/ui/button";
 import { CardTitle } from "../../components/ui/card";
 
@@ -20,7 +21,7 @@ export default function CodePage() {
         <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="rounded-lg border border-white/10 p-4">
             <div className="flex items-center gap-3 mb-3">
-              <Code className="h-5 w-5 text-cyan-300" />
+              <Code className="h-5 w-5 text-brand-secondary" />
               <CardTitle className="text-lg">HeyLeaf</CardTitle>
             </div>
             <div className="text-sm text-slate-300/80 space-y-2">
@@ -37,34 +38,30 @@ export default function CodePage() {
                   variant="gradient-primary"
                   size="sm"
                   className="gap-2"
-                  style={{
-                    background:
-                      "linear-gradient(to bottom right, #2d5ce0, #E02DB7)",
-                  }}
+                  asChild
                 >
                   <Link href="https://github.com/myronjanssen/heyleaf">
+                    <ExternalLink className="h-4 w-4" />
                     View App
                   </Link>
                 </Button>
                 <Button
-                  variant="gradient-primary"
+                  variant="gradient-accent"
                   size="sm"
                   className="gap-2"
-                  style={{
-                    background:
-                      "linear-gradient(to bottom right, #2d5ce0, #E02DB7)",
-                  }}
+                  asChild
                 >
-                  <Code href="https://github.com/XIIISins/heyleaf">
+                  <Link href="https://github.com/XIIISins/heyleaf">
+                    <Code className="h-4 w-4" />
                     View Code
-                  </Code>
+                  </Link>
                 </Button>
               </div>
             </div>
           </div>
           <div className="rounded-lg border border-white/10 p-4">
             <div className="flex items-center gap-3 mb-3">
-              <Code className="h-5 w-5 text-cyan-300" />
+              <Code className="h-5 w-5 text-brand-secondary" />
               <CardTitle className="text-lg">Portfolio</CardTitle>
             </div>
             <div className="text-sm text-slate-300/80 space-y-2">
@@ -76,25 +73,17 @@ export default function CodePage() {
               </div>
               <div className="flex items-center gap-2 mt-4">
                 <Button
-                  variant="gradient-primary"
+                  variant="gradient-accent"
                   size="sm"
                   className="gap-2"
-                  style={{
-                    background:
-                      "linear-gradient(to bottom right, #2d5ce0, #E02DB7)",
-                  }}
+                  asChild
                 >
                   <Link href="https://github.com/myronjanssen/myronjanssen.com">
+                    <Code className="h-4 w-4" />
                     View Code
                   </Link>
                 </Button>
               </div>
-            </div>
-          </div>
-          <div className="rounded-lg border border-white/10 p-4">
-            <div className="flex items-center gap-3 mb-3">
-              <Code className="h-5 w-5 text-cyan-300" />
-              <CardTitle className="text-lg">HeyLeaf</CardTitle>
             </div>
           </div>
         </div>

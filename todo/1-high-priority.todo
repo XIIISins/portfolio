@@ -1,0 +1,20 @@
+1. Component Refactoring
+- [ ] Break down large homepage component (`src/app/page.tsx` - 394 lines)
+  - [ ] Create `src/components/sections/hero.tsx`
+  - [ ] Create `src/components/sections/experience.tsx`
+  - [ ] Create `src/components/sections/skills-grid.tsx`
+  - [ ] Create `src/components/sections/about-panel.tsx`
+  - [ ] Update homepage to use new components
+
+2. Error Boundaries
+- [ ] Create `src/components/error-boundary.tsx`
+- [ ] Add error boundaries for dynamic imports (Terminal component)
+- [ ] Add error boundaries for client components
+- [ ] Implement fallback UI for error states
+
+3. Loading States & UX
+- [ ] Improve Terminal component loading UX
+  - [ ] Add skeleton loader for syntax highlighter
+  - [ ] Implement progressive loading for code snippets
+- [ ] Add loading states for dynamic content
+- [ ] Implement smooth transitions between page states

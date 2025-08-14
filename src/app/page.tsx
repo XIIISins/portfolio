@@ -37,17 +37,6 @@ export default function HomePage() {
         <p className="mt-4 max-w-2xl text-base md:text-lg text-slate-300/80">
           Linux/KVM, IaC, and product-minded automation.
         </p>
-
-        {/* <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button variant="gradient-primary">
-              <Play className="h-4 w-4" />
-              <span className="truncate max-w-[220px] sm:max-w-none">Live demo</span>
-            </Button>
-            <Button variant="outline-glass">
-              <FileText className="h-4 w-4" />
-              <span className="truncate max-w-[240px] sm:max-w-none">Read the guide with a reasonably long title</span>
-            </Button>
-          </div> */}
       </section>
 
       {/* Terminal and About Section */}
@@ -61,7 +50,7 @@ export default function HomePage() {
         <div className="lg:col-span-1">
           <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur h-full">
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-br from-cyan-400 to-fuchsia-400 flex items-center justify-center">
+              <div className="h-8 w-8 rounded-full bg-gradient-to-br from-brand-secondary to-brand-accent flex items-center justify-center">
                 <span className="text-sm font-semibold text-white">MJ</span>
               </div>
               <h4 className="text-base md:text-lg font-semibold tracking-tight text-white/90">
@@ -74,17 +63,9 @@ export default function HomePage() {
               </p>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm text-slate-300/80">
-                  <span
-                    className="inline-flex h-2 w-2 rounded-full"
-                    style={{ backgroundColor: "#12D6C7" }}
-                  ></span>
+                  <span className="inline-flex h-2 w-2 rounded-full bg-brand-secondary"></span>
                   <span>Based in the Netherlands</span>
-                  {/* </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-300/80"> */}
-                  <span
-                    className="inline-flex h-2 w-2 rounded-full"
-                    style={{ backgroundColor: "#12D6C7" }}
-                  ></span>
+                  <span className="inline-flex h-2 w-2 rounded-full bg-brand-secondary"></span>
                   <span>Remote-first</span>
                 </div>
               </div>
@@ -98,7 +79,7 @@ export default function HomePage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Server className="h-4 w-4 text-cyan-300" />
+              <Server className="h-4 w-4 text-brand-secondary" />
               <CardTitle>Linux Platform & Virtualization</CardTitle>
             </div>
           </CardHeader>
@@ -112,7 +93,7 @@ export default function HomePage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Workflow className="h-4 w-4 text-fuchsia-300" />
+              <Workflow className="h-4 w-4 text-brand-accent" />
               <CardTitle>Automation & IaC</CardTitle>
             </div>
           </CardHeader>
@@ -124,7 +105,7 @@ export default function HomePage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Database className="h-4 w-4 text-emerald-300" />
+              <Database className="h-4 w-4 text-brand-secondary" />
               <CardTitle>Databases</CardTitle>
             </div>
           </CardHeader>
@@ -138,7 +119,7 @@ export default function HomePage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Binoculars className="h-4 w-4 text-emerald-300" />
+              <Binoculars className="h-4 w-4 text-brand-secondary" />
               <CardTitle>Reliability & Observability</CardTitle>
             </div>
           </CardHeader>
@@ -152,7 +133,7 @@ export default function HomePage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <History className="h-4 w-4 text-emerald-300" />
+              <History className="h-4 w-4 text-brand-secondary" />
               <CardTitle>Backup & DR</CardTitle>
             </div>
           </CardHeader>
@@ -166,7 +147,7 @@ export default function HomePage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <GitMerge className="h-4 w-4 text-emerald-300" />
+              <GitMerge className="h-4 w-4 text-brand-secondary" />
               <CardTitle>CI/CD & Software Development</CardTitle>
             </div>
           </CardHeader>
@@ -189,10 +170,7 @@ export default function HomePage() {
           <div className="rounded-lg border border-white/10 p-3">
             <div className="flex items-center justify-between gap-3">
               <CardTitle>SORSIT</CardTitle>
-              <span
-                className="inline-flex h-3 w-3 rounded-full"
-                style={{ backgroundColor: "#a100ff" }}
-              ></span>
+              <span className="inline-flex h-3 w-3 rounded-full bg-brand-accent"></span>
             </div>
             <div className="text-sm text-slate-300/80">
               <div>
@@ -202,36 +180,24 @@ export default function HomePage() {
                 <span className="text-xs text-slate-300/80">2024-present</span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
                   Lead Linux upgrade projects for enterprise customers.
                 </span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>Implemented high-availability OLVM environments.</span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
                   Upgrade existing OLVM environments for improved performance
                   and reliability.
                 </span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
                   Built custom Ansible interface to integrate with ZohoVault.
                 </span>
@@ -242,10 +208,7 @@ export default function HomePage() {
           <div className="rounded-lg border border-white/10 p-3">
             <div className="flex items-center justify-between gap-3">
               <CardTitle>Accenture</CardTitle>
-              <span
-                className="inline-flex h-3 w-3 rounded-full"
-                style={{ backgroundColor: "#a100ff" }}
-              ></span>
+              <span className="inline-flex h-3 w-3 rounded-full bg-brand-accent"></span>
             </div>
             <div className="text-sm text-slate-300/80">
               <div>
@@ -255,35 +218,23 @@ export default function HomePage() {
                 <span className="text-xs text-slate-300/80">2023-2024</span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
                   Maintained and optimized infrastructure for internal systems.
                 </span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>Implemented automation with Ansible.</span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
                   Supported containerized workloads on virtual machines.
                 </span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
                   Assisted in modernization initiatives for internal systems.
                 </span>
@@ -294,10 +245,7 @@ export default function HomePage() {
           <div className="rounded-lg border border-white/10 p-3">
             <div className="flex items-center justify-between gap-3">
               <CardTitle>Sentia</CardTitle>
-              <span
-                className="inline-flex h-3 w-3 rounded-full"
-                style={{ backgroundColor: "#ffb423" }}
-              ></span>
+              <span className="inline-flex h-3 w-3 rounded-full bg-brand-orange"></span>
             </div>
             <div className="text-sm text-slate-300/80">
               <div>
@@ -307,34 +255,22 @@ export default function HomePage() {
                 <span className="text-xs text-slate-300/80">2015-2023</span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>Managed VMware environments ensuring 99.9%+ uptime.</span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
                   Automated provisioning, configuration management and
                   maintenance of systems using Ansible and Bash.
                 </span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>Deployed HA services with HAProxy and Keepalived.</span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>Monitored systems with Zabbix.</span>
               </div>
             </div>
@@ -343,10 +279,7 @@ export default function HomePage() {
           <div className="rounded-lg border border-white/10 p-3">
             <div className="flex items-center justify-between gap-3">
               <CardTitle>Yenlo</CardTitle>
-              <span
-                className="inline-flex h-3 w-3 rounded-full"
-                style={{ backgroundColor: "#5793db" }}
-              ></span>
+              <span className="inline-flex h-3 w-3 rounded-full bg-brand-primary"></span>
             </div>
             <div className="text-sm text-slate-300/80">
               <div>
@@ -356,30 +289,21 @@ export default function HomePage() {
                 <span className="text-xs text-slate-300/80">2012-2015</span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
                   Provided system administration and automation support for
                   internal and client environments.
                 </span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
                   Deployed and maintained Apache/Nginx web servers and backend
                   databases.
                 </span>
               </div>
               <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
                   Participated in infrastructure modernization projects.
                 </span>

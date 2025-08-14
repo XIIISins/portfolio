@@ -7,7 +7,7 @@ export function Navbar() {
     <header className="fixed top-6 left-1/2 z-50 w-[92%] -translate-x-1/2">
       <nav className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md shadow-glass">
         <div className="flex items-center gap-2 min-w-0">
-          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-cyan-400 to-fuchsia-400 flex items-center justify-center">
+          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-brand-secondary to-brand-accent flex items-center justify-center">
             <Link href="/" className="text-sm font-semibold text-white">
               MJ
             </Link>
@@ -43,24 +43,14 @@ export function Navbar() {
 
         <div className="flex items-center gap-2 min-w-0">
           <Button
-            variant="outline-glass"
+            variant="gradient-primary"
             size="sm"
             className="hidden sm:inline-flex gap-2"
-            style={{
-              background: "linear-gradient(to bottom right, #2d5ce0, #12D6C7)",
-            }}
           >
             <GithubIcon className="h-4 w-4 text-white/90" />
             <span className="truncate max-w-[160px]">GitHub</span>
           </Button>
-          <Button
-            variant="gradient-primary"
-            size="sm"
-            className="gap-2"
-            style={{
-              background: "linear-gradient(to bottom right, #2d5ce0, #E02DB7)",
-            }}
-          >
+          <Button variant="gradient-accent" size="sm" className="gap-2">
             <ScrollText className="h-4 w-4" />
             <span className="truncate max-w-[160px] sm:max-w-[220px]">
               Resume

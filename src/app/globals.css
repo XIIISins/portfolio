@@ -24,6 +24,15 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
+
+    /* Brand colors */
+    --brand-primary: 221 83% 53%;
+    --brand-secondary: 175 85% 45%;
+    --brand-accent: 320 85% 55%;
+    --brand-orange: 35 100% 59%;
+    --brand-gradient-start: 221 83% 53%;
+    --brand-gradient-end: 175 85% 45%;
+    --brand-gradient-accent: 320 85% 55%;
   }
 
   .dark {
@@ -46,6 +55,15 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 94.1%;
+
+    /* Brand colors - dark mode */
+    --brand-primary: 221 83% 53%;
+    --brand-secondary: 175 85% 45%;
+    --brand-accent: 320 85% 55%;
+    --brand-orange: 35 100% 59%;
+    --brand-gradient-start: 221 83% 53%;
+    --brand-gradient-end: 175 85% 45%;
+    --brand-gradient-accent: 320 85% 55%;
   }
 }
 
@@ -64,10 +82,14 @@
   }
 
   .btn-gradient-primary {
-    @apply bg-gradient-to-br from-[#2d5ce0] to-[#12D6C7] text-white shadow-elevated hover:brightness-110 transition-all;
+    @apply bg-gradient-to-br from-brand-primary to-brand-secondary text-white shadow-elevated hover:brightness-110 transition-all;
+  }
+
+  .btn-gradient-accent {
+    @apply bg-gradient-to-br from-brand-primary to-brand-accent text-white shadow-elevated hover:brightness-110 transition-all;
   }
 
   .vignette {
-    @apply bg-[radial-gradient(120%_120%_at_50%_10%,rgba(45,92,224,0.14),transparent_52%)];
+    @apply bg-[radial-gradient(120%_120%_at_50%_10%,hsl(var(--brand-primary)/0.14),transparent_52%)];
   }
 }
