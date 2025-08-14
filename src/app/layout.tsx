@@ -8,7 +8,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio — Senior Platform/Infrastructure Engineer → Software/SRE",
+  title: "Platform Engineer building paved roads for developers.",
   description:
     "Portfolio showcasing systems work, developer tooling, and reliability engineering — now pivoting deeper into software and SRE.",
 };
