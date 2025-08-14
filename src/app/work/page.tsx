@@ -37,7 +37,7 @@ export default function WorkPage() {
                   style={{ backgroundColor: "#E02DB7" }}
                 ></span>
                 <span>
-                  Led RHEL 7 to RHEL 9 migration for 500+ servers across
+                  Led RHEL 7 to RHEL 9 migration for 100+ servers across
                   multiple environments.
                 </span>
               </div>
