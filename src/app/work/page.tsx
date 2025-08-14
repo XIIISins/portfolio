@@ -77,7 +77,8 @@ export default function WorkPage() {
                   style={{ backgroundColor: "#E02DB7" }}
                 ></span>
                 <span>
-                  Designed and deployed OLVM cluster with 99.99% uptime SLA.
+                  Designed and deployed multi-node MariaDB cluster with 99.99%
+                  uptime SLA.
                 </span>
               </div>
               <div className="flex items-start gap-2">
@@ -122,7 +123,7 @@ export default function WorkPage() {
                   style={{ backgroundColor: "#E02DB7" }}
                 ></span>
                 <span>
-                  Developed compliance automation for SOX and GDPR requirements.
+                  Developed compliance and hardening automation using Ansible.
                 </span>
               </div>
               <div className="flex items-start gap-2">
@@ -141,9 +142,7 @@ export default function WorkPage() {
           <div className="rounded-lg border border-white/10 p-4">
             <div className="flex items-center gap-3 mb-3">
               <Zap className="h-5 w-5 text-orange-300" />
-              <CardTitle className="text-lg">
-                Performance Optimization
-              </CardTitle>
+              <CardTitle className="text-lg">Monitoring Optimization</CardTitle>
             </div>
             <div className="text-sm text-slate-300/80 space-y-2">
               <div className="flex items-start gap-2">
@@ -152,7 +151,8 @@ export default function WorkPage() {
                   style={{ backgroundColor: "#E02DB7" }}
                 ></span>
                 <span>
-                  Optimized database performance reducing query times by 70%.
+                  Reduced monitoring alerts by implementing logic to filter out
+                  false positives.
                 </span>
               </div>
               <div className="flex items-start gap-2">
@@ -161,18 +161,8 @@ export default function WorkPage() {
                   style={{ backgroundColor: "#E02DB7" }}
                 ></span>
                 <span>
-                  Implemented caching strategies improving application response
-                  times.
-                </span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
-                <span>
-                  Reduced infrastructure costs by 40% through resource
-                  optimization.
+                  Implemented automated fixes for alerts that were recurring and
+                  had documented solutions.
                 </span>
               </div>
             </div>

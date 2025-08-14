@@ -92,7 +92,7 @@ export default function SkillsPage() {
               </div>
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>Rundeck · Jenkins · CI/CD pipelines (Proficient)</span>
+                <span>Rundeck/Jenkins/CI/CD pipelines (Proficient)</span>
               </div>
             </div>
           </div>
