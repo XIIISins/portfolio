@@ -58,13 +58,6 @@ export default function SkillsPage() {
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>VMware vSphere — virtualization (Proficient)</span>
               </div>
-              <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>
-                  systemd · SELinux · firewalld · storage & networking basics
-                  (Advanced)
-                </span>
-              </div>
             </div>
           </div>
 
@@ -82,17 +75,11 @@ export default function SkillsPage() {
               </div>
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>
-                  Rundeck — jobs, webhook triggers, notifications (Advanced)
-                </span>
+                <span>Rundeck/Jenkins/CI/CD pipelines (Proficient)</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>Docker — build, harden, health checks (Proficient)</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>Rundeck/Jenkins/CI/CD pipelines (Proficient)</span>
               </div>
             </div>
           </div>
