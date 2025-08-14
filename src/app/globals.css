@@ -62,14 +62,12 @@
   .surface-glass {
     @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-glass;
   }
-  
+
   .btn-gradient-primary {
     @apply bg-gradient-to-br from-[#2d5ce0] to-[#12D6C7] text-white shadow-elevated hover:brightness-110 transition-all;
   }
-  
+
   .vignette {
     @apply bg-[radial-gradient(120%_120%_at_50%_10%,rgba(45,92,224,0.14),transparent_52%)];
   }
-  
-
 }

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import dynamic from "next/dynamic"
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
+import dynamic from "next/dynamic";
+import { useState } from "react";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 // Load syntax highlighter client-side only
 const SyntaxHighlighter = dynamic(
@@ -13,15 +13,15 @@ const SyntaxHighlighter = dynamic(
       <pre className="h-[200px] md:h-[280px] w-full rounded-2xl bg-slate-900/40 animate-pulse" />
     ),
   }
-)
+);
 
 type Snippet = {
-  id: string
-  label: string
-  language: "yaml" | "docker" | "bash"
-  filename: string
-  code: string
-}
+  id: string;
+  label: string;
+  language: "yaml" | "docker" | "bash";
+  filename: string;
+  code: string;
+};
 
 const SNIPPETS: Snippet[] = [
   {
@@ -77,7 +77,7 @@ echo "$files" | while IFS= read -r f; do
 done && echo "✓ pre-commit checks passed"
 `,
   },
-]
+];
 
 function createCustomTheme() {
   return {
@@ -98,22 +98,23 @@ function createCustomTheme() {
       background: "transparent",
       textShadow: "none",
     },
-  }
+  };
 }
 
-function TabButton({ 
-  snippet, 
-  isActive, 
-  onSelect 
-}: { 
-  snippet: Snippet
-  isActive: boolean
-  onSelect: (snippet: Snippet) => void 
+function TabButton({
+  snippet,
+  isActive,
+  onSelect,
+}: {
+  snippet: Snippet;
+  isActive: boolean;
+  onSelect: (snippet: Snippet) => void;
 }) {
-  const baseClasses = "rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-white/10 transition"
-  const activeClasses = isActive 
-    ? "bg-white/10 text-white" 
-    : "bg-transparent text-slate-300 hover:bg-white/5"
+  const baseClasses =
+    "rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-white/10 transition";
+  const activeClasses = isActive
+    ? "bg-white/10 text-white"
+    : "bg-transparent text-slate-300 hover:bg-white/5";
 
   return (
     <button
@@ -123,17 +124,17 @@ function TabButton({
     >
       {snippet.label}
     </button>
-  )
+  );
 }
 
-function TerminalHeader({ 
-  activeSnippet, 
+function TerminalHeader({
+  activeSnippet,
   snippets,
-  onSnippetSelect
-}: { 
-  activeSnippet: Snippet
-  snippets: Snippet[]
-  onSnippetSelect: (snippet: Snippet) => void
+  onSnippetSelect,
+}: {
+  activeSnippet: Snippet;
+  snippets: Snippet[];
+  onSnippetSelect: (snippet: Snippet) => void;
 }) {
   return (
     <div className="flex flex-wrap items-center gap-2 px-4 py-3 bg-slate-900/80 border-b border-white/10">
@@ -156,12 +157,12 @@ function TerminalHeader({
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export function Terminal() {
-  const [activeSnippet, setActiveSnippet] = useState<Snippet>(SNIPPETS[0]!)
-  const customTheme = createCustomTheme()
+  const [activeSnippet, setActiveSnippet] = useState<Snippet>(SNIPPETS[0]!);
+  const customTheme = createCustomTheme();
 
   return (
     <section className="relative">
@@ -186,5 +187,5 @@ export function Terminal() {
         </div>
       </div>
     </section>
-  )
+  );
 }
