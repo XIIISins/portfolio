@@ -6,6 +6,7 @@ import {
   Server,
   Workflow,
 } from "lucide-react";
+import Link from "next/link";
 import { Button } from "../../components/ui/button";
 import { CardTitle } from "../../components/ui/card";
 
@@ -24,9 +25,15 @@ export default function SkillsPage() {
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <Button variant="gradient-primary" size="sm" className="mt-4 gap-2">
             <Mail className="h-4 w-4" />
-            <span className="truncate max-w-[220px] sm:max-w-none">
-              Contact
-            </span>
+            <Link
+              href="mailto:contact@myronjanssen.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="truncate max-w-[220px] sm:max-w-none">
+                Contact
+              </span>
+            </Link>
           </Button>
         </div>
       </section>
