@@ -40,7 +40,7 @@ export default function CodePage() {
                   className="gap-2"
                   asChild
                 >
-                  <Link href="https://github.com/myronjanssen/heyleaf">
+                  <Link href="https://heyleaf.app">
                     <ExternalLink className="h-4 w-4" />
                     View App
                   </Link>
@@ -78,7 +78,7 @@ export default function CodePage() {
                   className="gap-2"
                   asChild
                 >
-                  <Link href="https://github.com/myronjanssen/myronjanssen.com">
+                  <Link href="https://github.com/XIIISins/portfolio">
                     <Code className="h-4 w-4" />
                     View Code
                   </Link>
