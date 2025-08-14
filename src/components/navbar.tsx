@@ -28,16 +28,16 @@ export function Navbar() {
             Work
           </Link>
           <Link
-            href="/code"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-slate-200/90 hover:text-white hover:bg-white/5 transition-colors"
-          >
-            Code
-          </Link>
-          <Link
             href="/skills"
             className="rounded-lg px-3 py-2 text-sm font-medium text-slate-200/90 hover:text-white hover:bg-white/5 transition-colors"
           >
             Skills
+          </Link>
+          <Link
+            href="/code"
+            className="rounded-lg px-3 py-2 text-sm font-medium text-slate-200/90 hover:text-white hover:bg-white/5 transition-colors"
+          >
+            Code
           </Link>
         </div>
 
