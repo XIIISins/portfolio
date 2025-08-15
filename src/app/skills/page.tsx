@@ -12,7 +12,7 @@ import { CardTitle } from "../../components/ui/card";
 
 export default function SkillsPage() {
   return (
-    <main className="relative mx-auto w-[92%] pt-36 md:pt-32">
+    <main className="relative container-width mx-auto pt-36 md:pt-32">
       <section className="relative">
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-white">
           My Skills

@@ -1,19 +1,5 @@
 import { Terminal } from "@/components/terminal";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Binoculars,
-  Database,
-  GitMerge,
-  History,
-  Server,
-  Workflow,
-} from "lucide-react";
+import { CardTitle } from "@/components/ui/card";
 
 const about = `
 I build calm systems and useful little tools.
@@ -28,7 +14,7 @@ Off-hours: coffee, trails, a bit of tinkering.
 
 export default function HomePage() {
   return (
-    <main className="relative mx-auto w-[92%] pt-36 md:pt-32">
+    <main className="relative container-width mx-auto pt-36 md:pt-32">
       {/* Hero */}
       <section className="relative">
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-white">
@@ -74,7 +60,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Cards */}
+      {/* Cards
       <section className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
         <Card>
           <CardHeader>
@@ -158,7 +144,7 @@ export default function HomePage() {
             </CardDescription>
           </CardContent>
         </Card>
-      </section>
+      </section> */}
 
       <section className="mt-8 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
         <div className="flex items-center justify-between gap-3 flex-wrap">

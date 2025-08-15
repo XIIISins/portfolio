@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="flex flex-col items-center justify-between gap-4 w-[92%] mx-auto md:flex-row mt-14 mb-10">
+    <footer className="flex flex-col items-center justify-between gap-4 container-width mx-auto md:flex-row mt-14 mb-10">
       <p className="text-xs text-slate-400/80">© 2025 Myron Janssen</p>
       <div className="flex items-center gap-2">
         <Button variant="outline-glass" size="sm" className="gap-2">
