@@ -39,7 +39,8 @@ const SNIPPETS: Snippet[] = [
     - centos9-hardening-auditd
     - centos9-hardening-pam
     - centos9-hardening-firewall
-    - centos9-hardening-crypto`,
+    - centos9-hardening-crypto
+    `,
   },
   {
     id: "dockerfile",
@@ -178,7 +179,7 @@ export function Terminal() {
               language={activeSnippet.language}
               style={customTheme}
               wrapLines
-              showLineNumbers={false}
+              showLineNumbers={true}
             >
               {activeSnippet.code}
             </SyntaxHighlighter>

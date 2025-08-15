@@ -1,5 +1,8 @@
 import { Terminal } from "@/components/terminal";
+import { Button } from "@/components/ui/button";
 import { CardTitle } from "@/components/ui/card";
+import { Mail } from "lucide-react";
+import Link from "next/link";
 
 const about = `
 I build calm systems and useful little tools.
@@ -35,13 +38,27 @@ export default function HomePage() {
         {/* About - takes 1/3 of the space */}
         <div className="lg:col-span-1">
           <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur h-full">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-br from-brand-secondary to-brand-accent flex items-center justify-center">
-                <span className="text-sm font-semibold text-white">MJ</span>
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <div className="h-8 w-8 py-4 rounded-full bg-gradient-to-br from-brand-secondary to-brand-accent flex items-center justify-center">
+                  <span className="text-sm font-semibold text-white">MJ</span>
+                </div>
+                <h4 className="text-base md:text-lg font-semibold tracking-tight text-white/90">
+                  About
+                </h4>
               </div>
-              <h4 className="text-base md:text-lg font-semibold tracking-tight text-white/90">
-                About
-              </h4>
+              <Button variant="gradient-primary" size="sm" className="gap-2">
+                <Mail className="h-4 w-4" />
+                <Link
+                  href="mailto:contact@myronjanssen.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="truncate max-w-[220px] sm:max-w-none">
+                    Contact
+                  </span>
+                </Link>
+              </Button>
             </div>
             <div className="space-y-4">
               <p className="text-sm text-slate-200/90 leading-relaxed">
