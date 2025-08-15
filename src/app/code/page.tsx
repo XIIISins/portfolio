@@ -1,7 +1,13 @@
+import { Button } from "@/components/ui/button";
+import { CardTitle } from "@/components/ui/card";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { Code, ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { Button } from "../../components/ui/button";
-import { CardTitle } from "../../components/ui/card";
 
 export default function CodePage() {
   return (
@@ -45,17 +51,29 @@ export default function CodePage() {
                     View App
                   </Link>
                 </Button>
-                <Button
-                  variant="gradient-accent"
-                  size="sm"
-                  className="gap-2"
-                  asChild
-                >
-                  <Link href="https://github.com/XIIISins/heyleaf">
-                    <Code className="h-4 w-4" />
-                    View Code
-                  </Link>
-                </Button>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        variant="gradient-accent"
+                        size="sm"
+                        className="gap-2"
+                        asChild
+                      >
+                        <Link href="https://github.com/XIIISins/heyleaf">
+                          <Code className="h-4 w-4" />
+                          View Code
+                        </Link>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>
+                        Source code not available yet as it&apos;s still in
+                        development and not ready for release.
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
             </div>
           </div>
