@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Code, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import { CodeBlock } from "../../components/ui/code-block";
 
 export default function CodePage() {
   return (
@@ -28,15 +29,57 @@ export default function CodePage() {
           <div className="rounded-lg border border-white/10 p-4">
             <div className="flex items-center gap-3 mb-3">
               <Code className="h-5 w-5 text-brand-secondary" />
-              <CardTitle className="text-lg">HeyLeaf</CardTitle>
+              <CardTitle className="text-lg">
+                HeyLeaf (private, pre-release)
+              </CardTitle>
             </div>
             <div className="text-sm text-slate-300/80 space-y-2">
               <div className="flex items-start gap-2">
                 <span>
-                  HeyLeaf is a privacy-focused plant care app. Allows users to
-                  add and identify plants, keep track of their growth and setup
-                  reminders via care schedules. It is built with React,
-                  Capacitor, Tailwind CSS, and Supabase.
+                  Privacy-friendly plant care app. Guest mode (local data), fast
+                  add flow, simple care schedules. Built as a React web app and
+                  packaged to iOS with Capacitor.
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span>
+                  <span className="font-bold">Status:</span> Private,
+                  pre-release
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span>
+                  <span className="font-bold">Peek the code: </span>
+                  Snippet below, request read-only access if needed
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span>
+                  <span className="font-bold">Stack:</span> React, Capacitor
+                  (iOS), Tailwind CSS, Supabase
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <CodeBlock
+                  language="typescript"
+                  className="mt-4"
+                  filename="src/lib/identifyPlant.ts"
+                >
+                  {`export async function identifyPlant(api: string, file: File, organs='leaf') {
+  const fd = new FormData()
+  fd.append('images', file)
+  fd.append('organs', organs)
+  const r = await fetch(api, { method: 'POST', body: fd })
+  if (!r.ok) throw new Error(\`HTTP \${r.status}\`)
+  return r.json()
+}`}
+                </CodeBlock>
+              </div>
+              <div className="flex items-start gap-2 py-4">
+                <span>
+                  <span className="font-bold">Next steps: </span>
+                  UI/UX redesign for web, polishing iOS app, start packaging
+                  Android app, Easier sign-up (SSO with multiple providers)
                 </span>
               </div>
               <div className="flex items-center gap-2">
@@ -80,14 +123,48 @@ export default function CodePage() {
           <div className="rounded-lg border border-white/10 p-4">
             <div className="flex items-center gap-3 mb-3">
               <Code className="h-5 w-5 text-brand-secondary" />
-              <CardTitle className="text-lg">Portfolio</CardTitle>
+              <CardTitle className="text-lg">Portfolio (Public)</CardTitle>
             </div>
             <div className="text-sm text-slate-300/80 space-y-2">
               <div className="flex items-start gap-2">
                 <span>
-                  This portfolio is built with Next.js, Tailwind CSS, and Shadcn
-                  UI.
+                  <span className="font-bold">This site: </span>
+                  Minimal, fast, accessible; outcome-first content with real
+                  code receipts. Next.js 14 (App Router), TypeScript, Tailwind,
+                  shadcn/ui, Lucide.
                 </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span>
+                  <span className="font-bold">Status: </span>
+                  Public, open-source, in development
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span>
+                  <span className="font-bold">Highlights: </span>
+                  client-island terminal with syntax highlighting, 3 outcome
+                  cards, strict TS
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <CodeBlock
+                  language="docker"
+                  className="mt-4"
+                  filename="Dockerfile"
+                >
+                  {`# Dockerfile (Next.js 14 standalone)
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package.json pnpm-lock.yaml ./
+RUN corepack enable && pnpm i --frozen-lockfile
+COPY . . && pnpm build
+FROM node:20-alpine AS run
+ENV NODE_ENV=production
+COPY --from=build /app/.next/standalone /app/.next/static /app/public ./
+USER node
+CMD ["node","server.js"]`}
+                </CodeBlock>
               </div>
               <div className="flex items-center gap-2 mt-4">
                 <Button

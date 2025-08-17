@@ -55,15 +55,26 @@ export default function SkillsPage() {
             <div className="text-sm text-slate-300/80 space-y-2">
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>RHEL/OL/EL — OS lifecycle & operations (Advanced)</span>
+                <span>
+                  Enterprise Linux (RHEL/OL/EL) — major upgrades via versioned
+                  templates (e.g., EL7→EL9); minor releases patched in place;
+                  documented rollback. (Advanced)
+                </span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>KVM/OLVM — virtualization & VM lifecycle (Advanced)</span>
+                <span>
+                  Virtualisation platforms — KVM/OLVM (Proficient); VMware
+                  vSphere (Proficient). Templates, host lifecycle,
+                  live-migration tests.
+                </span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>VMware vSphere — virtualization (Proficient)</span>
+                <span>
+                  Core OS services — systemd · SELinux · firewalld ·
+                  storage/networking basics. (Advanced)
+                </span>
               </div>
             </div>
           </div>
@@ -77,16 +88,33 @@ export default function SkillsPage() {
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
-                  Ansible — roles, idempotent baselines, linting (Advanced)
+                  Ansible — roles and idempotent baselines; preflight checks;
+                  linted, dry-run-first playbooks; clean inventories/vars.
+                  (Advanced)
                 </span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>Rundeck/Jenkins/CI/CD pipelines (Proficient)</span>
+                <span>
+                  Rundeck — webhook-triggered, scheduled, and manual jobs; repo
+                  sync; staged flows (preflight → run → post-validate); RBAC and
+                  messenger/email notifications. (Advanced)
+                </span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>Docker — build, harden, health checks (Proficient)</span>
+                <span>
+                  CI pipelines — Jenkins / GitHub Actions / GitLab CI;
+                  lint/test, build + scan images, tag & promote; pre-commit
+                  gates wired in. (Proficient)
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                <span>
+                  Docker — multi-stage builds, minimal base, non-root runtime;
+                  hardened images; small runtime footprint. (Proficient)
+                </span>
               </div>
             </div>
           </div>
@@ -100,20 +128,26 @@ export default function SkillsPage() {
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
-                  Cutover/rollback playbooks — checklists & validation
-                  (Advanced)
+                  Cutovers & rollback — apps behind load balancers/ reverse
+                  proxies; blue/green rollbacks by switching traffic; checklists
+                  and validation. (Advanced)
                 </span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                 <span>
-                  Monitoring-agnostic — most hours on Zabbix to Apr 2024
-                  (Advanced)
+                  Monitoring & alerting — tool-agnostic; deep hours on Zabbix to
+                  Apr 2024; also Nagios and others; focus on actionable signals,
+                  low noise. (Advanced)
                 </span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>Backup/restore drills — DR runbooks (Proficient)</span>
+                <span>
+                  Backup & restore drills — executed restore drills; verified
+                  recovery steps; acted as the technical subject-matter expert
+                  (not the primary author of DR runbooks).
+                </span>
               </div>
             </div>
           </div>
@@ -130,14 +164,18 @@ export default function SkillsPage() {
                   <div className="flex items-start gap-2">
                     <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                     <span>
-                      MySQL/MariaDB — HA and multi-master patterns (Proficient)
+                      MySQL/MariaDB — designed & implemented HA setups:
+                      multi-primary and primary-replica; read/write split;
+                      traffic routed via load balancers for multi-write.
+                      (Proficient)
                     </span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                     <span>
-                      PostgreSQL (administration) — installation, configuration,
-                      DB/role management, extensions (Proficient)
+                      PostgreSQL — administration: installation, configuration,
+                      database & role management, extension setup; day-to-day
+                      maintenance. (Proficient)
                     </span>
                   </div>
                 </div>
@@ -145,20 +183,42 @@ export default function SkillsPage() {
               <div className=" rounded-lg border border-white/10 p-4">
                 <div className="flex items-center gap-3 mb-3">
                   <Code2 className="h-5 w-5 text-brand-secondary" />
-                  <CardTitle className="text-lg">Development</CardTitle>
+                  <CardTitle className="text-lg">
+                    Software & integrations
+                  </CardTitle>
                 </div>
                 <div className="text-sm text-slate-300/80 space-y-2">
                   <div className="flex items-start gap-2">
                     <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                     <span>
-                      TypeScript · React · Next.js — shipped to iOS with
-                      Capacitor (Familiar)
+                      TypeScript · React · Next.js — building this site and
+                      small web apps; learning-focused and pragmatic; packaging
+                      to iOS when needed. (Familiar)
                     </span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
                     <span>
-                      Testing & linters — simple build pipelines (Familiar)
+                      Testing & linters — enforce code quality with ESLint/
+                      Prettier, pre-commit hooks, and CI gates; fail-fast
+                      pipelines over ceremony. (Proficient)
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                    <span>
+                      Python — Ansible plugins/callbacks to securely integrate
+                      systems without native support (Password Managers, IPAM,
+                      etc.); REST API clients and glue tooling. (Proficient)
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                    <span>
+                      Systems messaging — co-developed the original alerting
+                      service in C; co-developed the Perl refactor; later helped
+                      maintain logic during the JS/TS refactor (service windows,
+                      on-call escalation matrix). (Familiar)
                     </span>
                   </div>
                 </div>
