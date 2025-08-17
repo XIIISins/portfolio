@@ -1,5 +1,5 @@
 import { CardTitle } from "@/components/ui/card";
-import { Code, ExternalLink, Globe, Shield, Zap } from "lucide-react";
+import { Code, Database, ExternalLink, Shield } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../../components/ui/button";
 
@@ -24,7 +24,7 @@ export default function WorkPage() {
             Key Projects & Achievements
           </h4>
         </div>
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="rounded-lg border border-white/10 p-4">
             <div className="flex items-center gap-3 mb-3">
               <Code className="h-5 w-5 text-cyan-300" />
@@ -69,53 +69,87 @@ export default function WorkPage() {
               </div>
             </div>
             <div className="flex mt-4 gap-2 justify-end">
-              <Button
-                variant="gradient-primary"
-                className="w-1/4 gap-2"
-                asChild
-              >
-                <Link href="/work/el-upgrade-factory">
-                  <ExternalLink className="h-4 w-4" />
-                  View Details
-                </Link>
-              </Button>
+              <div className="flex-1">
+                <Button
+                  variant="gradient-primary"
+                  className="w-1/4.5 gap-2"
+                  asChild
+                >
+                  <Link href="/work/el-upgrade-factory">
+                    <ExternalLink className="h-4 w-4" />
+                    View Details
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
 
           <div className="rounded-lg border border-white/10 p-4">
             <div className="flex items-center gap-3 mb-3">
-              <Globe className="h-5 w-5 text-fuchsia-300" />
+              <Database className="h-5 w-5 text-fuchsia-300" />
               <CardTitle className="text-lg">
-                High Availability Infrastructure
+                MariaDB Galera automated rolling updates
               </CardTitle>
             </div>
-            <div className="text-sm text-slate-300/80 space-y-2">
-              <div className="flex items-start gap-2">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+            <div className="text-sm text-slate-300/80 space-y-4">
+              <div className="flex flex-col">
+                <span className="font-semibold text-white">
+                  Scope & windows:
+                </span>
                 <span>
-                  Designed and deployed multi-node MariaDB cluster with 99.99%
-                  uptime SLA.
+                  Multi-node MariaDB Galera cluster behind a load balancer
+                </span>
+                <span>
+                  Rolling node ops during short windows; no write loss
                 </span>
               </div>
-              <div className="flex items-start gap-2">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+              <div className="flex flex-col">
+                <span className="font-semibold text-white">Approach:</span>
                 <span>
-                  Implemented automated failover and disaster recovery
-                  procedures.
+                  Opinionated lane with tags: preflight → change → validate.
+                </span>
+                <span>
+                  Rolling execution with serial: 1 across the hostgroup;
+                  any_errors_fatal: true.
+                </span>
+                <span>
+                  LB drain per node via HAProxy runtime socket; wait until 0
+                  live conns (runtime JSON).
+                </span>
+                <span>
+                  wsrep gates before/after: Synced, ready=ON, cluster Primary.
+                </span>
+                <span>
+                  Validate with retries/delays; enable on LB only after gates
+                  pass; simple write probe.
+                </span>
+                <span>
+                  Job logs = audit trail; runs pin a git ref for repeatability.
                 </span>
               </div>
-              <div className="flex items-start gap-2">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
-                <span>Reduced recovery time from 4 hours to 15 minutes.</span>
+              <div className="flex flex-col">
+                <span className="font-semibold text-white">Results:</span>
+                <span>
+                  Predictable windows; fewer manual steps; lower incident risk.
+                </span>
+                <span>
+                  Clear pass/fail gates; easy to pause/rollback per node.
+                </span>
+                <span>Auditable runs (who/what/which ref).</span>
+              </div>
+              <div className="flex mt-4 gap-2 justify-end">
+                <div className="flex-1">
+                  <Button
+                    variant="gradient-primary"
+                    className="w-1/4.5 gap-2"
+                    asChild
+                  >
+                    <Link href="/work/galera-cluster-automation">
+                      <ExternalLink className="h-4 w-4" />
+                      View Details
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -153,35 +187,6 @@ export default function WorkPage() {
                 <span>
                   Reduced security incidents by 85% through proactive
                   monitoring.
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-lg border border-white/10 p-4">
-            <div className="flex items-center gap-3 mb-3">
-              <Zap className="h-5 w-5 text-orange-300" />
-              <CardTitle className="text-lg">Monitoring Optimization</CardTitle>
-            </div>
-            <div className="text-sm text-slate-300/80 space-y-2">
-              <div className="flex items-start gap-2">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
-                <span>
-                  Reduced monitoring alerts by implementing logic to filter out
-                  false positives.
-                </span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
-                <span>
-                  Implemented automated fixes for alerts that were recurring and
-                  had documented solutions but no structural fixes.
                 </span>
               </div>
             </div>

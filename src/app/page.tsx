@@ -24,7 +24,7 @@ export default function HomePage() {
           Platform Engineer building paved roads for developers.
         </h1>
         <p className="mt-4 max-w-2xl text-base md:text-lg text-slate-300/80">
-          Linux/KVM, IaC, and product-minded automation.
+          Linux, IaC, and product-minded automation.
         </p>
       </section>
 

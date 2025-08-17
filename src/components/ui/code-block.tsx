@@ -20,7 +20,7 @@ export function CodeBlock({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-glass overflow-hidden",
+        "rounded-2xl border border-white/10 bg-black/35 backdrop-blur-md shadow-glass overflow-hidden",
         className
       )}
     >
@@ -29,11 +29,6 @@ export function CodeBlock({
           <span className="text-m font-medium text-slate-300/80">
             {filename}
           </span>
-          {/* <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-400/60"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-400/60"></div>
-            <div className="w-3 h-3 rounded-full bg-green-400/60"></div>
-          </div> */}
         </div>
       )}
       <div className="p-4">
