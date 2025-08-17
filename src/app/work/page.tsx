@@ -1,5 +1,7 @@
 import { CardTitle } from "@/components/ui/card";
-import { Code, Globe, Shield, Zap } from "lucide-react";
+import { Code, ExternalLink, Globe, Shield, Zap } from "lucide-react";
+import Link from "next/link";
+import { Button } from "../../components/ui/button";
 
 export default function WorkPage() {
   return (
@@ -30,36 +32,53 @@ export default function WorkPage() {
                 Enterprise Linux Migration
               </CardTitle>
             </div>
-            <div className="text-sm text-slate-300/80 space-y-2">
-              <div className="flex items-start gap-2">
-                <span
+            <div className="text-sm text-slate-300/80 space-y-4">
+              <div className="flex flex-col">
+                {/* <span
                   className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
                   style={{ backgroundColor: "#E02DB7" }}
-                ></span>
+                ></span> */}
+                <span className="font-semibold text-white">
+                  Scope & windows:
+                </span>
+                <span>All VMs (hypervisor lifecycle owned by infra team).</span>
                 <span>
-                  Led RHEL 7 to RHEL 9 migration for 100+ servers across
-                  multiple environments.
+                  Short non-prod windows for testing; no practical prod
+                  downtime.
                 </span>
               </div>
-              <div className="flex items-start gap-2">
-                <span
+              <div className="flex flex-col items-start">
+                {/* <span
                   className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
                   style={{ backgroundColor: "#E02DB7" }}
-                ></span>
-                <span>
-                  Implemented automated testing and rollback procedures ensuring
-                  zero downtime.
-                </span>
+                ></span> */}
+                <div className="font-semibold text-white">Approach:</div>
+                <span>EL9 baseline template (hardened/approved)</span>
+                <span>provision per env</span>
+                <span>install/config via Ansible</span>
+                <span>OS preflights as tasks</span>
+                <span>app preflights via Ansible ad-hoc (app-specific)</span>
+                <span>rehearsed rollback in test</span>
+                <span>blue/green cutover behind loadbalancers or proxies.</span>
               </div>
-              <div className="flex items-start gap-2">
-                <span
-                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: "#E02DB7" }}
-                ></span>
-                <span>
-                  Reduced migration time by 60% through Ansible automation.
-                </span>
+              <div className="flex flex-col items-start">
+                <span className="font-semibold text-white">Results:</span>
+                <span>No practical downtime in production upgrade</span>
+                <span>Rollback plan documented and tested.</span>
+                <span>No increase in alert noise post-cutover.</span>
               </div>
+            </div>
+            <div className="flex mt-4 gap-2 justify-end">
+              <Button
+                variant="gradient-primary"
+                className="w-1/4 gap-2"
+                asChild
+              >
+                <Link href="/work/el-upgrade-factory">
+                  <ExternalLink className="h-4 w-4" />
+                  View Details
+                </Link>
+              </Button>
             </div>
           </div>
 
