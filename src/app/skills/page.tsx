@@ -45,23 +45,29 @@ export default function SkillsPage() {
         </div>
       </section>
 
-      <section className="mt-8 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+      <section className="mt-8 rounded-xl border border-white/10 bg-white/5 p-4">
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <h4 className="text-base md:text-lg font-semibold tracking-tight text-white/90">
             Primary skills & tools
           </h4>
         </div>
-        <div className="mt-4 grid grid-cols-3 md:grid-cols-3 gap-4">
-          <div className="rounded-lg border border-white/10 p-4">
+
+        {/* 1 col (mobile) → 2 cols (md) → 3 cols (lg) */}
+        <div className="mt-6 grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {/* Platforms & Virtualization */}
+          <article className="min-w-0 w-full rounded-lg border border-white/10 p-4">
             <div className="flex items-center gap-3 mb-3">
               <Server className="h-5 w-5 text-brand-secondary" />
               <CardTitle className="text-lg">
-                Platforms & Virtualization
+                Platforms &amp; Virtualization
               </CardTitle>
             </div>
             <div className="text-sm text-slate-300/80 space-y-2">
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                <span
+                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                  aria-hidden="true"
+                />
                 <span>
                   Enterprise Linux (RHEL/OL/EL) — major upgrades via versioned
                   templates (e.g., EL7→EL9); minor releases patched in place;
@@ -69,7 +75,10 @@ export default function SkillsPage() {
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                <span
+                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                  aria-hidden="true"
+                />
                 <span>
                   Virtualisation platforms — KVM/OLVM (Proficient); VMware
                   vSphere (Proficient). Templates, host lifecycle,
@@ -77,23 +86,32 @@ export default function SkillsPage() {
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                <span
+                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                  aria-hidden="true"
+                />
                 <span>
                   Core OS services — systemd · SELinux · firewalld ·
                   storage/networking basics. (Advanced)
                 </span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div className="rounded-lg border border-white/10 p-4">
+          {/* Automation & Tooling */}
+          <article className="min-w-0 w-full rounded-lg border border-white/10 p-4">
             <div className="flex items-center gap-3 mb-3">
               <Workflow className="h-5 w-5 text-brand-secondary" />
-              <CardTitle className="text-lg">Automation & Tooling</CardTitle>
+              <CardTitle className="text-lg">
+                Automation &amp; Tooling
+              </CardTitle>
             </div>
             <div className="text-sm text-slate-300/80 space-y-2">
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                <span
+                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                  aria-hidden="true"
+                />
                 <span>
                   Ansible — roles and idempotent baselines; preflight checks;
                   linted, dry-run-first playbooks; clean inventories/vars.
@@ -101,7 +119,10 @@ export default function SkillsPage() {
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                <span
+                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                  aria-hidden="true"
+                />
                 <span>
                   Rundeck — webhook-triggered, scheduled, and manual jobs; repo
                   sync; staged flows (preflight → run → post-validate); RBAC and
@@ -109,94 +130,123 @@ export default function SkillsPage() {
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                <span
+                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                  aria-hidden="true"
+                />
                 <span>
                   CI pipelines — Jenkins / GitHub Actions / GitLab CI;
-                  lint/test, build + scan images, tag & promote; pre-commit
+                  lint/test, build + scan images, tag &amp; promote; pre-commit
                   gates wired in. (Proficient)
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                <span
+                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                  aria-hidden="true"
+                />
                 <span>
                   Docker — multi-stage builds, minimal base, non-root runtime;
                   hardened images; small runtime footprint. (Proficient)
                 </span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div className="rounded-lg border border-white/10 p-4">
+          {/* Release & Ops */}
+          <article className="min-w-0 w-full rounded-lg border border-white/10 p-4">
             <div className="flex items-center gap-3 mb-3">
               <ClipboardCheck className="h-5 w-5 text-brand-secondary" />
-              <CardTitle className="text-lg">Release & Ops</CardTitle>
+              <CardTitle className="text-lg">Release &amp; Ops</CardTitle>
             </div>
             <div className="text-sm text-slate-300/80 space-y-2">
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                <span
+                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                  aria-hidden="true"
+                />
                 <span>
-                  Cutovers & rollback — apps behind load balancers/ reverse
+                  Cutovers &amp; rollback — apps behind load balancers/reverse
                   proxies; blue/green rollbacks by switching traffic; checklists
                   and validation. (Advanced)
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                <span
+                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                  aria-hidden="true"
+                />
                 <span>
-                  Monitoring & alerting — tool-agnostic; deep hours on Zabbix to
-                  Apr 2024; also Nagios and others; focus on actionable signals,
-                  low noise. (Advanced)
+                  Monitoring &amp; alerting — tool-agnostic; deep hours on
+                  Zabbix to Apr 2024; also Nagios and others; focus on
+                  actionable signals, low noise. (Advanced)
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                <span
+                  className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                  aria-hidden="true"
+                />
                 <span>
-                  Backup & restore drills — executed restore drills; verified
-                  recovery steps; acted as the technical subject-matter expert
-                  (not the primary author of DR runbooks).
+                  Backup &amp; restore drills — executed restore drills;
+                  verified recovery steps; acted as the technical subject-matter
+                  expert (not the primary author of DR runbooks).
                 </span>
               </div>
             </div>
-          </div>
+          </article>
 
-          {/* Second row - merged across all columns */}
-          <div className="col-span-3">
-            <div className="grid grid-cols-2 gap-4">
-              <div className=" rounded-lg border border-white/10 p-4">
+          {/* Second row — spans all columns only on lg+ */}
+          <div className="lg:col-span-3">
+            {/* stack on mobile, 2 cols from sm+ */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Databases */}
+              <article className="min-w-0 w-full rounded-lg border border-white/10 p-4">
                 <div className="flex items-center gap-3 mb-3">
                   <Database className="h-5 w-5 text-brand-secondary" />
                   <CardTitle className="text-lg">Databases</CardTitle>
                 </div>
                 <div className="text-sm text-slate-300/80 space-y-2">
                   <div className="flex items-start gap-2">
-                    <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                    <span
+                      className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                      aria-hidden="true"
+                    />
                     <span>
-                      MySQL/MariaDB — designed & implemented HA setups:
+                      MySQL/MariaDB — designed &amp; implemented HA setups:
                       multi-primary and primary-replica; read/write split;
                       traffic routed via load balancers for multi-write.
                       (Proficient)
                     </span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                    <span
+                      className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                      aria-hidden="true"
+                    />
                     <span>
                       PostgreSQL — administration: installation, configuration,
-                      database & role management, extension setup; day-to-day
-                      maintenance. (Proficient)
+                      database &amp; role management, extension setup;
+                      day-to-day maintenance. (Proficient)
                     </span>
                   </div>
                 </div>
-              </div>
-              <div className=" rounded-lg border border-white/10 p-4">
+              </article>
+
+              {/* Software & integrations */}
+              <article className="min-w-0 w-full rounded-lg border border-white/10 p-4">
                 <div className="flex items-center gap-3 mb-3">
                   <Code2 className="h-5 w-5 text-brand-secondary" />
                   <CardTitle className="text-lg">
-                    Software & integrations
+                    Software &amp; integrations
                   </CardTitle>
                 </div>
                 <div className="text-sm text-slate-300/80 space-y-2">
                   <div className="flex items-start gap-2">
-                    <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                    <span
+                      className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                      aria-hidden="true"
+                    />
                     <span>
                       TypeScript · React · Next.js — building this site and
                       small web apps; learning-focused and pragmatic; packaging
@@ -204,15 +254,21 @@ export default function SkillsPage() {
                     </span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                    <span
+                      className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                      aria-hidden="true"
+                    />
                     <span>
-                      Testing & linters — enforce code quality with ESLint/
-                      Prettier, pre-commit hooks, and CI gates; fail-fast
+                      Testing &amp; linters — enforce code quality with
+                      ESLint/Prettier, pre-commit hooks, and CI gates; fail-fast
                       pipelines over ceremony. (Proficient)
                     </span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                    <span
+                      className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                      aria-hidden="true"
+                    />
                     <span>
                       Python — Ansible plugins/callbacks to securely integrate
                       systems without native support (Password Managers, IPAM,
@@ -220,7 +276,10 @@ export default function SkillsPage() {
                     </span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
+                    <span
+                      className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                      aria-hidden="true"
+                    />
                     <span>
                       Systems messaging — co-developed the original alerting
                       service in C; co-developed the Perl refactor; later helped
@@ -229,7 +288,7 @@ export default function SkillsPage() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
         </div>

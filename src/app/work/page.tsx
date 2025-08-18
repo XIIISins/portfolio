@@ -35,7 +35,7 @@ export default function WorkPage() {
                 Enterprise Linux Migration
               </CardTitle>
             </div>
-            <div className="text-sm text-slate-300/80 space-y-4">
+            <div className="text-sm text-slate-300/80 space-y-4 leading-relaxed mb-2">
               <div className="flex flex-col">
                 {/* <span
                   className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0"

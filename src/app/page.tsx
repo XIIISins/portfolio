@@ -28,7 +28,7 @@ export default function HomePage() {
       <section className="relative" aria-labelledby="hero-heading">
         <h1
           id="hero-heading"
-          className="text-4xl md:text-6xl font-semibold tracking-tight text-white"
+          className="text-4xl md:text-6xl md:max-w-[22ch] font-semibold tracking-tight text-white"
         >
           Platform engineer. Calm systems, paved roads.
         </h1>
@@ -79,7 +79,7 @@ export default function HomePage() {
               </Button>
             </div>
             <div className="space-y-4">
-              <p className="text-sm text-slate-200/90 leading-relaxed">
+              <p className="leading-relaxed text-sm text-slate-200/90 max-w-prose">
                 {about}
               </p>
               <div className="space-y-2">
@@ -200,7 +200,7 @@ export default function HomePage() {
           </h2>
         </div>
         <div
-          className="mt-4 grid grid-cols-4 gap-2 sm:grid-cols-4"
+          className="mt-4 md:mt-8 grid grid-cols-1 md:grid-cols-4 gap-2 sm:grid-cols-4"
           role="list"
           aria-label="Professional experience timeline"
         >

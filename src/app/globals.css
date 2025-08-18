@@ -79,6 +79,10 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @layer base {
@@ -252,4 +256,8 @@ pre[class*="language-"] {
 
 .token.entity {
   cursor: help;
+}
+
+.sheet-content {
+  -webkit-font-smoothing: auto;
 }
