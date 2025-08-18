@@ -6,9 +6,16 @@ import {
   Server,
   Workflow,
 } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "../../components/ui/button";
 import { CardTitle } from "../../components/ui/card";
+
+export const metadata: Metadata = {
+  title: "Skills",
+  description:
+    "Linux/KVM, IaC, and ops — Ansible, Rundeck, Docker, monitoring, DR drills, databases, and platform-minded tooling.",
+};
 
 export default function SkillsPage() {
   return (

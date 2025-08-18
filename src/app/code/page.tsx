@@ -7,8 +7,15 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Code, ExternalLink } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { CodeBlock } from "../../components/ui/code-block";
+
+export const metadata: Metadata = {
+  title: "Code",
+  description:
+    "Hands-on projects: HeyLeaf (privacy-friendly plant care) and this portfolio — Next.js/TypeScript, Capacitor, Tailwind.",
+};
 
 export default function CodePage() {
   return (

@@ -3,7 +3,7 @@ global:
 ✔ start second case study (paved-road-automation/calm-operations) @done(25-08-17 19:05)
 ✔ rework main work page content for second case study @done(25-08-17 19:05)
 ✔ create button & link to second case study subpage @done(25-08-17 19:05)
-☐ start third case study (paved-road-automation/calm-operations)
+☐ start third case study (paved-road-automation/calm-operations) @started(25-08-17 22:15)
 ☐ rework main work page content for third case study
 ☐ create button & link to third case study subpage
 
@@ -14,7 +14,7 @@ paved-road-automation:
 ✔ copy el-upgrade-factory page to paved-road-automation and replace content & rename @done(25-08-17 19:05)
 
 calm-operations:
-☐ create content for calm-operations
-☐ create subpage for calm-operations
-☐ create receipts/snippets for calm-operations
-☐ copy el-upgrade-factory page to calm-operations and replace content & rename
+✔ create content for calm-operations @started(25-08-17 19:46) @done(25-08-18 07:57) @lasted(12h11m23s)
+☐ create subpage for calm-operations @started(25-08-17 21:30) @done(25-08-17 21:45)
+✔ create receipts/snippets for calm-operations @started(25-08-17 22:00) @done(25-08-18 09:39) @lasted(11h39m20s)
+✔ copy el-upgrade-factory page to calm-operations and replace content & rename @done(25-08-18 09:39)

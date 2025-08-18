@@ -1,6 +1,13 @@
 import { CodeBlock } from "@/components/ui/code-block";
+import { Metadata } from "next";
 
-export default function ELUpgradeFactoryPage() {
+export const metadata: Metadata = {
+  title: "MariaDB Galera rolling operations",
+  description:
+    "Automated rolling updates for MariaDB Galera: preflight→change→validate, drain/rejoin, and audit-ready jobs.",
+};
+
+export default function GaleraClusterAutomationPage() {
   return (
     <main className="relative container-width mx-auto pt-36 md:pt-32">
       {/* Hero */}
@@ -127,11 +134,11 @@ export default function ELUpgradeFactoryPage() {
             Client artifacts can&apos;t be shared.
           </p>
           <p className="text-sm text-slate-300/80">
-            All examples are newly written, generic, and tool-agnostic;
-            originals remain private.
+            Examples are anonymized and recreated; configs, names, and IPs are
+            placeholders.
           </p>
           <p className="text-sm text-slate-300/80">
-            Receipts shown are representative.
+            Receipts use the actual stack and are representative.
           </p>
         </div>
         {/*Code Snippets*/}
@@ -156,7 +163,7 @@ export default function ELUpgradeFactoryPage() {
               1) Top-level playbook — roll 1-by-1, fail closed
             </h4>
             <CodeBlock
-              filename="galera-rolling-updates.yml"
+              filename="Ansible - galera-rolling-updates.yml"
               language="yaml"
             >{`# galera-rolling-updates.yml — rolling lane for the whole group
 - hosts: galera_nodes
@@ -200,7 +207,7 @@ export default function ELUpgradeFactoryPage() {
           </h4>
           <div className="mt-4">
             <CodeBlock
-              filename="preflight.yml"
+              filename="Ansible - preflight.yml"
               language="yaml"
             >{`# 2.1 Cluster must be healthy before touching LB
 - name: wsrep must be Primary, Synced, ready
@@ -242,7 +249,7 @@ export default function ELUpgradeFactoryPage() {
           </div>
           <div className="mt-4">
             <CodeBlock
-              filename="change.yml"
+              filename="Ansible - change.yml"
               language="yaml"
             >{`# use package/service/etc. to update/restart the service
 - name: Stop MariaDB
@@ -261,7 +268,7 @@ export default function ELUpgradeFactoryPage() {
             </h4>
           </div>
           <div className="mt-4">
-            <CodeBlock filename="validate.yml" language="yaml">
+            <CodeBlock filename="Ansible - validate.yml" language="yaml">
               {`# 4.0 Vars for retry rhythm
 - vars:
     validate_retries: 30    # ~2-3 min total
@@ -332,7 +339,7 @@ export default function ELUpgradeFactoryPage() {
             </h4>
           </div>
           <div className="mt-4">
-            <CodeBlock filename="rundeck-job.yml" language="yaml">
+            <CodeBlock filename="Rundeck - job.yml" language="yaml">
               {`- id: galera-rolling
   name: Galera rolling op (hostgroup)
   sequence:

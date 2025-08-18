@@ -2,7 +2,14 @@ import { Terminal } from "@/components/terminal";
 import { Button } from "@/components/ui/button";
 import { CardTitle } from "@/components/ui/card";
 import { Mail } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Platform engineer building calm systems and paved-road automation.",
+  description:
+    "Linux/KVM, Ansible/Rundeck/Docker, clear runbooks, and reliable ops.",
+};
 
 const about = `
 I build calm systems and useful little tools.
@@ -24,7 +31,8 @@ export default function HomePage() {
           Platform Engineer building paved roads for developers.
         </h1>
         <p className="mt-4 max-w-2xl text-base md:text-lg text-slate-300/80">
-          Linux, IaC, and product-minded automation.
+          Building internal platforms and paved roads for
+          <span className="text-slate-200">product teams</span> (non-MSP).
         </p>
       </section>
 

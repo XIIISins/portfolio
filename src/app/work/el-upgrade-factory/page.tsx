@@ -1,4 +1,11 @@
 import { CodeBlock } from "@/components/ui/code-block";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Enterprise Linux upgrade factory",
+  description:
+    "Enterprise Linux upgrade factory: EL7→EL9 with blue-green cutover, rehearsed rollback, and zero practical downtime.",
+};
 
 export default function ELUpgradeFactoryPage() {
   return (
@@ -126,11 +133,11 @@ export default function ELUpgradeFactoryPage() {
             Client artifacts can&apos;t be shared.
           </p>
           <p className="text-sm text-slate-300/80">
-            All examples are newly written, generic, and tool-agnostic;
-            originals remain private.
+            Examples are anonymized and recreated; configs, names, and IPs are
+            placeholders.
           </p>
           <p className="text-sm text-slate-300/80">
-            Receipts shown are representative.
+            Receipts use the actual stack and are representative.
           </p>
         </div>
         {/*Code Snippets*/}
@@ -145,7 +152,7 @@ export default function ELUpgradeFactoryPage() {
           </span>
           <div className="mt-4">
             <CodeBlock
-              filename="el9-template.yml"
+              filename="Ansible - el9-template.yml"
               language="yaml"
             >{`# create ansible user/sudo; install python3, cloud-init, guest-agent; run hardening role; clear machine-id.
 ---
@@ -206,7 +213,7 @@ export default function ELUpgradeFactoryPage() {
           </div>
           <div className="mt-4">
             <CodeBlock
-              filename="el9-preflight.yml"
+              filename="Ansible - el9-preflight.yml"
               language="yaml"
             >{`# SELinux enforcing; agent active; cloud-init ready; auditd ok.
 ---
@@ -239,7 +246,7 @@ export default function ELUpgradeFactoryPage() {
           </div>
           <div className="mt-4">
             <CodeBlock
-              filename="app-preflight.sh"
+              filename="Shell - app-preflight.sh"
               language="shell"
             >{`# health endpoint 200.
 ansible -m uri -a "url=http://app/health status_code=200"
@@ -256,7 +263,7 @@ ansible -m shell -a "nc -zv backend 3306"
           </div>
           <div className="mt-4">
             <CodeBlock
-              filename="cutover.yaml"
+              filename="Ansible - cutover.yaml"
               language="yaml"
             >{`# Cutover: add → verify → switch → verify
 ---
