@@ -1,14 +1,13 @@
 "use client";
 
+import { highlightHtml, type HighlightLanguage } from "@/lib/highlight";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface CodeBlockProps {
   children: string;
-  language?: string;
+  language?: HighlightLanguage | string;
   filename?: string;
   className?: string;
   defaultCollapsed?: boolean;
@@ -24,6 +23,11 @@ export function CodeBlock({
   maxHeight = "400px",
 }: CodeBlockProps) {
   const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
+  const lang: HighlightLanguage = (
+    language === "sh" ? "shell" : language
+  ) as HighlightLanguage;
+
+  const highlightedCode = highlightHtml(children, lang);
 
   return (
     <div
@@ -52,35 +56,18 @@ export function CodeBlock({
           )}
         </div>
       </div>
-      <div
-        className={cn(
-          "transition-all duration-200 ease-in-out overflow-hidden",
-          isCollapsed ? "max-h-0 opacity-0" : "max-h-[800px] opacity-100"
-        )}
-      >
+      {!isCollapsed && (
         <div className="p-4 overflow-auto code-scrollbar" style={{ maxHeight }}>
-          <SyntaxHighlighter
-            language={language}
-            style={oneDark}
-            customStyle={{
-              margin: 0,
-              background: "transparent",
-              fontSize: "0.875rem",
-              lineHeight: "1.5",
-              fontFamily:
-                "ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace",
-            }}
-            codeTagProps={{
-              style: {
-                fontFamily:
-                  "ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace",
-              },
-            }}
-          >
-            {children}
-          </SyntaxHighlighter>
+          <pre className="text-sm leading-relaxed font-mono text-slate-200 m-0 overflow-auto">
+            <code
+              className={cn("language-" + lang, "whitespace-pre")}
+              dangerouslySetInnerHTML={{
+                __html: highlightedCode,
+              }}
+            />
+          </pre>
         </div>
-      </div>
+      )}
     </div>
   );
 }

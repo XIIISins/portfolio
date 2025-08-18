@@ -1,27 +1,12 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { highlightHtml } from "@/lib/highlight";
 import { useState } from "react";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-
-// Load syntax highlighter client-side only
-const SyntaxHighlighter = dynamic(
-  () => import("react-syntax-highlighter").then((mod) => mod.Prism),
-  {
-    ssr: false,
-    loading: () => (
-      <pre
-        className="h-[200px] md:h-[280px] w-full rounded-2xl bg-slate-900/40 animate-pulse"
-        aria-label="Loading code examples"
-      />
-    ),
-  }
-);
 
 type Snippet = {
   id: string;
   label: string;
-  language: "yaml" | "docker" | "bash";
+  language: "yaml" | "docker" | "bash" | "shell" | "json" | "text";
   filename: string;
   code: string;
 };
@@ -49,7 +34,7 @@ const SNIPPETS: Snippet[] = [
     id: "dockerfile",
     label: "Dockerfile",
     language: "docker",
-    filename: "~/Dev/portfolio/Dockerfile",
+    filename: "~/projects/app/Dockerfile",
     code: `FROM node:20-alpine AS build
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
@@ -67,7 +52,7 @@ CMD ["node","server.js"]
     id: "pre-commit",
     label: "git pre-commit",
     language: "bash",
-    filename: "~/Dev/portfolio/.git/hooks/pre-commit",
+    filename: "~/.git/hooks/pre-commit",
     code: `#!/usr/bin/env bash
 set -eu
 files=$(git diff --cached --name-only); [ -z "$files" ] && exit 0
@@ -82,28 +67,6 @@ done && echo "✓ pre-commit checks passed"
 `,
   },
 ];
-
-function createCustomTheme() {
-  return {
-    ...oneDark,
-    'pre[class*="language-"]': {
-      ...oneDark['pre[class*="language-"]'],
-      background: "transparent",
-      margin: 0,
-      padding: "1rem",
-      fontSize: "13px",
-      lineHeight: 1.6,
-      borderRadius: 0,
-      fontFamily:
-        'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
-    },
-    'code[class*="language-"]': {
-      ...oneDark['code[class*="language-"]'],
-      background: "transparent",
-      textShadow: "none",
-    },
-  };
-}
 
 function TabButton({
   snippet,
@@ -175,7 +138,6 @@ function TerminalHeader({
 
 export function Terminal() {
   const [activeSnippet, setActiveSnippet] = useState<Snippet>(SNIPPETS[0]!);
-  const customTheme = createCustomTheme();
 
   return (
     <section className="relative">
@@ -196,16 +158,21 @@ export function Terminal() {
           onSnippetSelect={setActiveSnippet}
         />
         <div className="relative bg-slate-900/60">
-          <div className="max-h-[100px] md:max-h-[44vh] overflow-auto">
-            <SyntaxHighlighter
-              language={activeSnippet.language}
-              style={customTheme}
-              wrapLines
-              showLineNumbers={true}
+          <div className="max-h-[40vh] overflow-auto p-4">
+            <pre
+              className="m-0 text-sm leading-relaxed font-mono text-slate-200 overflow-auto"
               aria-label={`${activeSnippet.language} code example from ${activeSnippet.filename}`}
             >
-              {activeSnippet.code}
-            </SyntaxHighlighter>
+              <code
+                className={`language-${activeSnippet.language} whitespace-pre`}
+                dangerouslySetInnerHTML={{
+                  __html: highlightHtml(
+                    activeSnippet.code,
+                    activeSnippet.language
+                  ),
+                }}
+              />
+            </pre>
           </div>
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-slate-900/80 to-transparent"

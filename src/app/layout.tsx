@@ -5,7 +5,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -24,7 +28,9 @@ export const metadata: Metadata = {
     "automation",
     "linux",
     "ansible",
-    "vmware",
+    "docker",
+    "kubernetes",
+    "monitoring",
     "infrastructure",
   ],
   authors: [{ name: "Myron Janssen" }],
@@ -38,17 +44,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "/",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://myronjanssen.dev",
     title: "Myron Janssen - Platform Engineer",
     description:
       "Platform engineer focused on product-team platform/SRE work — calm systems, paved-road automation, and low-noise operations.",
     siteName: "Myron Janssen",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Myron Janssen - Platform Engineer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Myron Janssen - Platform Engineer",
     description:
       "Platform engineer focused on product-team platform/SRE work — calm systems, paved-road automation, and low-noise operations.",
+    images: ["/og-image.png"],
+    creator: "@myronjanssen",
   },
   robots: {
     index: true,
@@ -64,6 +80,9 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://myronjanssen.dev",
+  },
 };
 
 export default function RootLayout({
@@ -73,20 +92,47 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
+      <head>
+        {/* Performance optimizations */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+        {/* Preload critical resources */}
+        <link
+          rel="preload"
+          href="/fonts/inter-var.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
+        {/* Resource hints for better performance */}
+        <link rel="prefetch" href="/work" />
+        <link rel="prefetch" href="/code" />
+        <link rel="prefetch" href="/skills" />
+      </head>
       <body
         className={`${inter.className} min-h-screen bg-[linear-gradient(135deg,#0d2875_0%,#370F37_100%)] text-slate-200 antialiased`}
       >
-        {/* Skip link for keyboard navigation */}
+        {/* Skip link for accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-lg focus:font-semibold"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-black px-4 py-2 rounded-lg z-50"
         >
           Skip to main content
         </a>
 
         <Background />
         <Navbar />
-        <main id="main-content">{children}</main>
+        <main id="main-content" className="min-h-screen">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
