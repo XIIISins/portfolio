@@ -29,12 +29,14 @@ A modern portfolio website built with Next.js, TypeScript, Tailwind CSS, and sha
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 # or
@@ -42,6 +44,7 @@ npm install
 ```
 
 3. Run the development server:
+
 ```bash
 pnpm dev
 # or
@@ -70,17 +73,20 @@ src/
 ## Design System
 
 ### Colors
+
 - **Primary**: #2d5ce0 (Blue)
 - **Secondary**: #12D6C7 (Cyan)
 - **Background**: Linear gradient from #0d2875 to #370F37
 - **Accent**: #E02DB7 (Fuchsia), #FF9A2E (Orange)
 
 ### Typography
+
 - **Font**: Inter
 - **Headings**: 4xl-6xl, semibold, tracking-tight
 - **Body**: Base-17px, relaxed leading
 
 ### Components
+
 - **Glass Surfaces**: Rounded corners, backdrop blur, subtle borders
 - **Buttons**: Gradient primary, outline glass, ghost variants
 - **Cards**: Transparent backgrounds with glass effects
@@ -92,6 +98,34 @@ src/
 - `pnpm start` - Start production server
 - `pnpm lint` - Run ESLint
 - `pnpm type-check` - Run TypeScript type checking
+
+## SEO Configuration
+
+The site includes comprehensive SEO optimization with:
+
+- **Sitemap**: Automatically generated at `/sitemap.xml`
+- **Robots.txt**: Configured at `/robots.txt`
+- **Meta Tags**: Open Graph, Twitter Cards, and structured data
+- **Google Site Verification**: Support for Google Search Console
+
+### Environment Variables
+
+Create a `.env.local` file with the following variables:
+
+```bash
+# Site Configuration
+NEXT_PUBLIC_SITE_URL=https://myronjanssen.dev
+
+# SEO Verification (optional)
+GOOGLE_SITE_VERIFICATION=your_google_verification_code_here
+```
+
+### SEO Features
+
+- **Dynamic Sitemap**: Automatically includes all pages with proper priorities
+- **Robots.txt**: Allows crawling while protecting sensitive routes
+- **Meta Tags**: Comprehensive Open Graph and Twitter Card support
+- **Structured Data**: Ready for rich snippets and enhanced search results
 
 ## Deployment
 

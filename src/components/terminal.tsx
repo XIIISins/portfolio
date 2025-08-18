@@ -10,7 +10,10 @@ const SyntaxHighlighter = dynamic(
   {
     ssr: false,
     loading: () => (
-      <pre className="h-[200px] md:h-[280px] w-full rounded-2xl bg-slate-900/40 animate-pulse" />
+      <pre
+        className="h-[200px] md:h-[280px] w-full rounded-2xl bg-slate-900/40 animate-pulse"
+        aria-label="Loading code examples"
+      />
     ),
   }
 );
@@ -121,6 +124,7 @@ function TabButton({
     <button
       onClick={() => onSelect(snippet)}
       aria-pressed={isActive}
+      aria-label={`Switch to ${snippet.label} code example`}
       className={`${baseClasses} ${activeClasses}`}
     >
       {snippet.label}
@@ -138,8 +142,12 @@ function TerminalHeader({
   onSnippetSelect: (snippet: Snippet) => void;
 }) {
   return (
-    <div className="flex flex-wrap items-center gap-2 px-4 py-3 bg-slate-900/80 border-b border-white/10">
-      <div className="flex items-center gap-2">
+    <div
+      className="flex flex-wrap items-center gap-2 px-4 py-3 bg-slate-900/80 border-b border-white/10"
+      role="toolbar"
+      aria-label="Code example controls"
+    >
+      <div className="flex items-center gap-2" aria-hidden="true">
         <span className="h-3 w-3 rounded-full bg-red-500/90" />
         <span className="h-3 w-3 rounded-full bg-yellow-400/90" />
         <span className="h-3 w-3 rounded-full bg-green-500/90" />
@@ -147,7 +155,11 @@ function TerminalHeader({
       <div className="ml-3 text-xs font-mono text-slate-300/90 truncate">
         {activeSnippet.language} — {activeSnippet.filename}
       </div>
-      <div className="ml-auto flex items-center gap-1">
+      <div
+        className="ml-auto flex items-center gap-1"
+        role="tablist"
+        aria-label="Code example tabs"
+      >
         {snippets.map((snippet) => (
           <TabButton
             key={snippet.id}
@@ -167,7 +179,17 @@ export function Terminal() {
 
   return (
     <section className="relative">
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 backdrop-blur-sm shadow-2xl">
+      <div
+        className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 backdrop-blur-sm shadow-2xl"
+        role="region"
+        aria-label="Interactive code examples"
+        aria-describedby="terminal-description"
+      >
+        <div id="terminal-description" className="sr-only">
+          Interactive terminal showing code examples in different programming
+          languages. Use the tabs to switch between Ansible playbooks, Docker
+          configurations, and shell scripts.
+        </div>
         <TerminalHeader
           activeSnippet={activeSnippet}
           snippets={SNIPPETS}
@@ -180,11 +202,15 @@ export function Terminal() {
               style={customTheme}
               wrapLines
               showLineNumbers={true}
+              aria-label={`${activeSnippet.language} code example from ${activeSnippet.filename}`}
             >
               {activeSnippet.code}
             </SyntaxHighlighter>
           </div>
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-slate-900/80 to-transparent" />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-slate-900/80 to-transparent"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </section>

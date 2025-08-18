@@ -13,7 +13,12 @@
     "test:coverage": "jest --coverage",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "test:e2e:headed": "playwright test --headed"
+    "test:e2e:headed": "playwright test --headed",
+    "test:a11y": "playwright test tests/e2e/homepage.spec.ts --grep 'accessible'",
+    "test:performance": "lighthouse http://localhost:3000 --only-categories=performance --output=json --output-path=./lighthouse-performance-report.json",
+    "test:performance:html": "lighthouse http://localhost:3000 --only-categories=performance --output=html --output-path=./lighthouse-performance-report.html",
+    "optimize:performance": "node scripts/optimize-performance.js",
+    "audit:a11y": "npm run build && npx lighthouse http://localhost:3000 --only-categories=accessibility --output=json --output-path=./lighthouse-a11y-report.json"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",

@@ -16,7 +16,7 @@ I build calm systems and useful little tools.
 Linux-first on KVM/OLVM/VMware.
 Ansible, Rundeck, Docker; simple, readable pipelines.
 Prefer clarity: tidy cutovers, tested rollback, clear docs.
-Monitoring-agnostic; most hours on Zabbix to Apr ’24, happy to adapt.
+Monitoring-agnostic; most hours on Zabbix to Apr '24, happy to adapt.
 Current focus: internal platform work for product teams (non-MSP).
 Off-hours: coffee, trails, a bit of tinkering.
 `;
@@ -25,8 +25,11 @@ export default function HomePage() {
   return (
     <main className="relative container-width mx-auto pt-36 md:pt-32">
       {/* Hero */}
-      <section className="relative">
-        <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-white">
+      <section className="relative" aria-labelledby="hero-heading">
+        <h1
+          id="hero-heading"
+          className="text-4xl md:text-6xl font-semibold tracking-tight text-white"
+        >
           Platform engineer. Calm systems, paved roads.
         </h1>
         <p className="mt-4 max-w-2xl text-base md:text-lg text-slate-300/80">
@@ -46,20 +49,29 @@ export default function HomePage() {
           <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur h-full">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <div className="h-8 w-8 py-4 rounded-full bg-gradient-to-br from-brand-secondary to-brand-accent flex items-center justify-center">
+                <div
+                  className="h-8 w-8 py-4 rounded-full bg-gradient-to-br from-brand-secondary to-brand-accent flex items-center justify-center"
+                  aria-hidden="true"
+                >
                   <span className="text-sm font-semibold text-white">MJ</span>
                 </div>
-                <h4 className="text-base md:text-lg font-semibold tracking-tight text-white/90">
+                <h2 className="text-base md:text-lg font-semibold tracking-tight text-white/90">
                   About
-                </h4>
+                </h2>
               </div>
-              <Button variant="gradient-primary" size="sm" className="gap-2">
-                <Mail className="h-4 w-4" />
+              <Button
+                variant="gradient-primary"
+                size="sm"
+                className="gap-2"
+                asChild
+              >
                 <Link
                   href="mailto:contact@myronjanssen.dev"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Send email to contact@myronjanssen.dev (opens in new tab)"
                 >
+                  <Mail className="h-4 w-4" aria-hidden="true" />
                   <span className="truncate max-w-[220px] sm:max-w-none">
                     Contact
                   </span>
@@ -72,9 +84,15 @@ export default function HomePage() {
               </p>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm text-slate-300/80">
-                  <span className="inline-flex h-2 w-2 rounded-full bg-brand-secondary"></span>
+                  <span
+                    className="inline-flex h-2 w-2 rounded-full bg-brand-secondary"
+                    aria-hidden="true"
+                  ></span>
                   <span>Based in the Netherlands</span>
-                  <span className="inline-flex h-2 w-2 rounded-full bg-brand-secondary"></span>
+                  <span
+                    className="inline-flex h-2 w-2 rounded-full bg-brand-secondary"
+                    aria-hidden="true"
+                  ></span>
                   <span>Remote-first</span>
                 </div>
               </div>
@@ -169,17 +187,33 @@ export default function HomePage() {
         </Card>
       </section> */}
 
-      <section className="mt-8 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+      <section
+        className="mt-8 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur"
+        aria-labelledby="experience-heading"
+      >
         <div className="flex items-center justify-between gap-3 flex-wrap">
-          <h4 className="text-base md:text-lg font-semibold tracking-tight text-white/90">
+          <h2
+            id="experience-heading"
+            className="text-base md:text-lg font-semibold tracking-tight text-white/90"
+          >
             Professional experience
-          </h4>
+          </h2>
         </div>
-        <div className="mt-4 grid grid-cols-4 gap-2 sm:grid-cols-4">
-          <div className="rounded-lg border border-white/10 p-3">
+        <div
+          className="mt-4 grid grid-cols-4 gap-2 sm:grid-cols-4"
+          role="list"
+          aria-label="Professional experience timeline"
+        >
+          <div
+            className="rounded-lg border border-white/10 p-3"
+            role="listitem"
+          >
             <div className="flex items-center justify-between gap-3">
               <CardTitle>SORSIT</CardTitle>
-              <span className="inline-flex h-3 w-3 rounded-full bg-brand-accent"></span>
+              <span
+                className="inline-flex h-3 w-3 rounded-full bg-brand-accent"
+                aria-hidden="true"
+              ></span>
             </div>
             <div className="text-sm text-slate-300/80">
               <div>
@@ -188,36 +222,56 @@ export default function HomePage() {
               <div>
                 <span className="text-xs text-slate-300/80">2024-present</span>
               </div>
-              <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>
-                  Lead Linux upgrade projects for enterprise customers.
-                </span>
-              </div>
-              <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>Implemented high-availability OLVM environments.</span>
-              </div>
-              <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>
-                  Upgrade existing OLVM environments for improved performance
-                  and reliability.
-                </span>
-              </div>
-              <div className="flex items-start gap-2 text-xs text-slate-300/80">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"></span>
-                <span>
-                  Built custom Ansible interface to integrate with ZohoVault.
-                </span>
-              </div>
+              <ul className="space-y-1" aria-label="Key achievements at SORSIT">
+                <li className="flex items-start gap-2 text-xs text-slate-300/80">
+                  <span
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    aria-hidden="true"
+                  ></span>
+                  <span>
+                    Lead Linux upgrade projects for enterprise customers.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2 text-xs text-slate-300/80">
+                  <span
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    aria-hidden="true"
+                  ></span>
+                  <span>Implemented high-availability OLVM environments.</span>
+                </li>
+                <li className="flex items-start gap-2 text-xs text-slate-300/80">
+                  <span
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    aria-hidden="true"
+                  ></span>
+                  <span>
+                    Upgrade existing OLVM environments for improved performance
+                    and reliability.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2 text-xs text-slate-300/80">
+                  <span
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    aria-hidden="true"
+                  ></span>
+                  <span>
+                    Built custom Ansible interface to integrate with ZohoVault.
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <div className="rounded-lg border border-white/10 p-3">
+          <div
+            className="rounded-lg border border-white/10 p-3"
+            role="listitem"
+          >
             <div className="flex items-center justify-between gap-3">
               <CardTitle>Accenture</CardTitle>
-              <span className="inline-flex h-3 w-3 rounded-full bg-brand-accent"></span>
+              <span
+                className="inline-flex h-3 w-3 rounded-full bg-brand-accent"
+                aria-hidden="true"
+              ></span>
             </div>
             <div className="text-sm text-slate-300/80">
               <div>
@@ -251,10 +305,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-white/10 p-3">
+          <div
+            className="rounded-lg border border-white/10 p-3"
+            role="listitem"
+          >
             <div className="flex items-center justify-between gap-3">
               <CardTitle>Sentia</CardTitle>
-              <span className="inline-flex h-3 w-3 rounded-full bg-brand-orange"></span>
+              <span
+                className="inline-flex h-3 w-3 rounded-full bg-brand-orange"
+                aria-hidden="true"
+              ></span>
             </div>
             <div className="text-sm text-slate-300/80">
               <div>
@@ -285,10 +345,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-white/10 p-3">
+          <div
+            className="rounded-lg border border-white/10 p-3"
+            role="listitem"
+          >
             <div className="flex items-center justify-between gap-3">
               <CardTitle>Yenlo</CardTitle>
-              <span className="inline-flex h-3 w-3 rounded-full bg-brand-primary"></span>
+              <span
+                className="inline-flex h-3 w-3 rounded-full bg-brand-primary"
+                aria-hidden="true"
+              ></span>
             </div>
             <div className="text-sm text-slate-300/80">
               <div>
