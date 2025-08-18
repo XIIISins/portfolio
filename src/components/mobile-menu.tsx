@@ -8,20 +8,32 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { cn } from "@/lib/utils";
 import { GithubIcon, Mail, Menu, ScrollText, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export function MobileMenu() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Ensure the sheet closes if route changes for any reason.
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
+      {/* Trigger must be asChild to avoid button-in-button */}
       <SheetTrigger asChild>
         <button
-          className="md:hidden rounded-lg p-2 hover:bg-white/15 transition-colors"
           aria-label="Open menu"
+          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg hover:bg-white/10 transition-colors"
         >
-          <Menu className="h-11 w-11 text-white/90" aria-hidden="true" />
+          <Menu
+            className="h-11 w-11 md:h-8 md:w-8 sm:h-8 sm:w-8 text-white/90"
+            aria-hidden="true"
+          />
         </button>
       </SheetTrigger>
 
@@ -35,66 +47,50 @@ export function MobileMenu() {
               <span className="h-8 w-8 rounded-full bg-gradient-to-br from-brand-secondary to-brand-accent flex items-center justify-center text-sm font-semibold">
                 MJ
               </span>
-              <Link
-                href="/"
-                aria-label="Go to homepage"
-                className="hover:underline"
-              >
+              <Link href="/" className="hover:underline">
                 Myron Janssen
               </Link>
             </SheetTitle>
+
             <SheetClose asChild>
               <button
                 aria-label="Close menu"
-                className="rounded-lg justify-between p-2 hover:bgwhite/10 transition-colors"
+                className="rounded-lg p-2 hover:bg-white/10 transition-colors"
               >
-                <X className="h5-w5 text-white/90" aria-hidden="true" />
+                <X className="h-5 w-5 text-white/90" aria-hidden="true" />
               </button>
             </SheetClose>
           </div>
         </SheetHeader>
 
+        {/* Primary nav */}
         <nav
           className="mt-6 grid gap-2 text-slate-200"
           aria-label="Mobile menu"
         >
-          {/* // inside <SheetContent> … */}
-          <nav className="mt-6 grid gap-2" aria-label="Mobile menu">
-            <MobileLink href="/work" label="Work" />
-            <MobileLink href="/skills" label="Skills" />
-            <MobileLink href="/code" label="Code" />
-          </nav>
+          <NavItem href="/work" label="Work" />
+          <NavItem href="/skills" label="Skills" />
+          <NavItem href="/code" label="Code" />
         </nav>
 
+        {/* External links */}
         <div className="mt-6 grid gap-2">
-          <Link
+          <ExternalItem
             href="https://github.com/XIIISins"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-lg px-3 py-2 text-lg text-slate-200 hover:bg-white/10 flex items-center gap-2"
-          >
-            <GithubIcon className="h-6 w-6 mr-2" />
-            GitHub
-          </Link>
-          <Link
+            label="GitHub"
+            icon={<GithubIcon className="h-5 w-5" aria-hidden="true" />}
+          />
+          <ExternalItem
             href="/resume.pdf"
-            download="Myron_Janssen_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-lg px-3 py-2 text-lg text-slate-200 hover:bg-white/10 flex items-center gap-2"
-            aria-label="Download resume (PDF, opens in new tab)"
-          >
-            <ScrollText className="h-6 w-6 mr-2" />
-            Resume
-          </Link>
-          <Link
+            label="Resume"
+            icon={<ScrollText className="h-5 w-5" aria-hidden="true" />}
+            props={{ target: "_blank", rel: "noopener noreferrer" }}
+          />
+          <ExternalItem
             href="mailto:contact@myronjanssen.dev"
-            className="rounded-lg px-3 py-2 text-lg text-slate-200 hover:bg-white/10 flex items-center gap-2"
-            aria-label="Send email to contact@myronjanssen.dev"
-          >
-            <Mail className="h-6 w-6 mr-2" />
-            Contact
-          </Link>
+            label="Contact"
+            icon={<Mail className="h-5 w-5" aria-hidden="true" />}
+          />
         </div>
 
         <div className="mt-auto pt-8 text-xs text-slate-400">
@@ -105,61 +101,53 @@ export function MobileMenu() {
   );
 }
 
-function MobileLink({ href, label }: { href: string; label: string }) {
+/* ---------- helpers ---------- */
+
+function NavItem({ href, label }: { href: string; label: string }) {
   const pathname = usePathname();
   const active = pathname === href;
 
   return (
-    <Link
-      href={href}
-      className={cn(
-        // layout: big tap target, centered text
-        "group flex w-full items-center rounded-xl px-4 py-3",
-        // typography: crisp & predictable
-        "text-[15px] leading-6 font-medium",
-        // colors/states
-        active
-          ? "bg-white/10 text-white"
-          : "text-white/90 hover:bg-white/10 hover:text-white",
-        // a11y
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30",
-        "transition-colors"
-      )}
-    >
-      {label}
-    </Link>
-  );
-}
-function CloseLink({
-  href,
-  label,
-  external = false,
-}: {
-  href: string;
-  label: React.ReactNode;
-  external?: boolean;
-}) {
-  const pathname = usePathname();
-  const active = !external && pathname === href;
-
-  const classes = cn(
-    "group flex w-full items-center rounded-xl px-4 py-3",
-    "text-[15px] leading-6 font-medium transition-colors",
-    active
-      ? "bg-white/10 text-white"
-      : "text-white/90 hover:bg-white/10 hover:text-white",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
-  );
-
-  const props = external
-    ? { target: "_blank", rel: "noopener noreferrer" }
-    : {};
-
-  return (
     <SheetClose asChild>
-      <Link href={href} className={classes} {...props}>
+      <Link
+        href={href}
+        aria-current={active ? "page" : undefined}
+        className={[
+          "group flex w-full items-center rounded-xl px-4 py-3",
+          "text-[15px] leading-6 font-medium transition-colors",
+          active
+            ? "bg-white/10 text-white"
+            : "text-white/90 hover:text-white hover:bg-white/10",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30",
+        ].join(" ")}
+      >
         {label}
       </Link>
+    </SheetClose>
+  );
+}
+
+function ExternalItem({
+  href,
+  label,
+  icon,
+  props,
+}: {
+  href: string;
+  label: string;
+  icon: React.ReactNode;
+  props?: React.AnchorHTMLAttributes<HTMLAnchorElement>;
+}) {
+  return (
+    <SheetClose asChild>
+      <a
+        href={href}
+        {...props}
+        className="rounded-xl px-4 py-3 text-[15px] leading-6 font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors inline-flex items-center gap-3"
+      >
+        {icon}
+        {label}
+      </a>
     </SheetClose>
   );
 }
