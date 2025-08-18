@@ -8,17 +8,16 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Platform engineer building calm systems and paved-road automation.",
   description:
-    "Linux/KVM, Ansible/Rundeck/Docker, clear runbooks, and reliable ops.",
+    "Platform engineer focused on product-team platform/SRE work — calm systems, paved-road automation, and low-noise operations.",
 };
 
 const about = `
 I build calm systems and useful little tools.
-Linux-first: RHEL/OL/EL on KVM/OLVM/VMware.
-Ansible, Rundeck, Docker; simple pipelines.
-Prefer clarity: tidy cutovers, readable docs.
-Monitoring-agnostic; most time with Zabbix
-(through Apr 2024), happy to adapt.
-Alerts that matter; noise kept low.
+Linux-first on KVM/OLVM/VMware.
+Ansible, Rundeck, Docker; simple, readable pipelines.
+Prefer clarity: tidy cutovers, tested rollback, clear docs.
+Monitoring-agnostic; most hours on Zabbix to Apr ’24, happy to adapt.
+Current focus: internal platform work for product teams (non-MSP).
 Off-hours: coffee, trails, a bit of tinkering.
 `;
 
@@ -28,11 +27,10 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative">
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-white">
-          Platform Engineer building paved roads for developers.
+          Platform engineer. Calm systems, paved roads.
         </h1>
         <p className="mt-4 max-w-2xl text-base md:text-lg text-slate-300/80">
-          Building internal platforms and paved roads for
-          <span className="text-slate-200">product teams</span> (non-MSP).
+          Fewer contexts, calmer ops; internal platforms (non-MSP).
         </p>
       </section>
 
