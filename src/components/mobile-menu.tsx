@@ -9,7 +9,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { GithubIcon, Menu, ScrollText, X } from "lucide-react";
+import { GithubIcon, Mail, Menu, ScrollText, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -86,6 +86,14 @@ export function MobileMenu() {
           >
             <ScrollText className="h-6 w-6 mr-2" />
             Resume
+          </Link>
+          <Link
+            href="mailto:contact@myronjanssen.dev"
+            className="rounded-lg px-3 py-2 text-lg text-slate-200 hover:bg-white/10 flex items-center gap-2"
+            aria-label="Send email to contact@myronjanssen.dev"
+          >
+            <Mail className="h-6 w-6 mr-2" />
+            Contact
           </Link>
         </div>
 
