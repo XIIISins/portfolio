@@ -1,6 +1,9 @@
 export function Background() {
   return (
     <div className="pointer-events-none fixed inset-0 -z-10">
+      {/* Base gradient background */}
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,#0d2875_0%,#370F37_100%)]"></div>
+
       {/* Base subtle vignette */}
       <div className="absolute inset-0 vignette"></div>
 

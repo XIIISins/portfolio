@@ -101,7 +101,7 @@ export default function RootLayout({
         <link rel="prefetch" href="/skills" />
       </head>
       <body
-        className={`${inter.className} min-h-screen bg-[linear-gradient(135deg,#0d2875_0%,#370F37_100%)] text-slate-200 antialiased`}
+        className={`${inter.className} min-h-screen text-slate-200 antialiased`}
       >
         {/* Skip link for accessibility */}
         <a
