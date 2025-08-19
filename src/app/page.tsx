@@ -211,7 +211,8 @@ export default function HomePage() {
             <div className="flex items-center justify-between gap-3">
               <CardTitle>SORSIT</CardTitle>
               <span
-                className="inline-flex h-3 w-3 rounded-full bg-brand-accent"
+                className="inline-flex h-3 w-3 rounded-full"
+                style={{ backgroundColor: "#FFFFFF" }}
                 aria-hidden="true"
               ></span>
             </div>

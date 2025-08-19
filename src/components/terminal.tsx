@@ -164,7 +164,7 @@ export function Terminal() {
               aria-label={`${activeSnippet.language} code example from ${activeSnippet.filename}`}
             >
               <code
-                className={`language-${activeSnippet.language} whitespace-pre`}
+                className="whitespace-pre"
                 dangerouslySetInnerHTML={{
                   __html: highlightHtml(
                     activeSnippet.code,
