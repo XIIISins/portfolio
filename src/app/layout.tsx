@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -103,6 +104,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} min-h-screen text-slate-200 antialiased`}
       >
+        <Analytics />
         {/* Skip link for accessibility */}
         <a
           href="#main-content"
