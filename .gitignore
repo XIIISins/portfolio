@@ -43,3 +43,4 @@ playwright-report/
 
 # Code workspace
 portfolio.code-workspace
+.vscode/
