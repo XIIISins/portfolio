@@ -27,8 +27,6 @@ const customJestConfig = {
       statements: 70,
     },
   },
-  // Configure Jest to use fish shell
-  shell: "/opt/homebrew/bin/fish",
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
