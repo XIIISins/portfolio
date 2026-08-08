@@ -115,7 +115,7 @@ export default function HomePage() {
           </h2>
         </div>
         <div
-          className="mt-4 md:mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2"
+          className="mt-4 md:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"
           role="list"
           aria-label="Professional experience timeline"
         >
@@ -201,7 +201,7 @@ export default function HomePage() {
               <ul className="space-y-1" aria-label="Key achievements at SORSIT">
                 <li className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span
-                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-secondary"
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
                     aria-hidden="true"
                   ></span>
                   <span>
@@ -210,14 +210,14 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span
-                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-secondary"
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
                     aria-hidden="true"
                   ></span>
                   <span>Implemented high-availability OLVM environments.</span>
                 </li>
                 <li className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span
-                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-secondary"
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
                     aria-hidden="true"
                   ></span>
                   <span>
@@ -227,7 +227,7 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span
-                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-secondary"
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
                     aria-hidden="true"
                   ></span>
                   <span>
