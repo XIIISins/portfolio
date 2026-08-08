@@ -102,7 +102,7 @@ export default function RootLayout({
         <link rel="prefetch" href="/skills" />
       </head>
       <body
-        className={`${inter.className} min-h-screen text-slate-200 antialiased`}
+        className={`${inter.className} min-h-screen flex flex-col text-slate-200 antialiased`}
       >
         <Analytics />
         {/* Skip link for accessibility */}
@@ -115,7 +115,7 @@ export default function RootLayout({
 
         <Background />
         <Navbar />
-        <main id="main-content" className="min-h-screen">
+        <main id="main-content" className="flex-1">
           {children}
         </main>
         <Footer />
