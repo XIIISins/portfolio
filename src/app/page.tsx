@@ -115,10 +115,70 @@ export default function HomePage() {
           </h2>
         </div>
         <div
-          className="mt-4 md:mt-8 grid grid-cols-1 md:grid-cols-4 gap-2 sm:grid-cols-4"
+          className="mt-4 md:mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2"
           role="list"
           aria-label="Professional experience timeline"
         >
+          <div
+            className="rounded-lg border border-white/10 p-3"
+            role="listitem"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <CardTitle>X2com</CardTitle>
+              <span
+                className="inline-flex h-3 w-3 rounded-full"
+                style={{ backgroundColor: "#91bf3e" }}
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div className="text-sm text-slate-300/80">
+              <div>
+                <span className="text-s text-slate-300/80">Linux Engineer</span>
+              </div>
+              <div>
+                <span className="text-xs text-slate-300/80">2026-present</span>
+              </div>
+              <ul className="space-y-1" aria-label="Key achievements at X2com">
+                <li className="flex items-start gap-2 text-xs text-slate-300/80">
+                  <span
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    aria-hidden="true"
+                  ></span>
+                  <span>Set up VictoriaLogs platform (Done).</span>
+                </li>
+                <li className="flex items-start gap-2 text-xs text-slate-300/80">
+                  <span
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    aria-hidden="true"
+                  ></span>
+                  <span>
+                    Designing and building infrastructure provisioning (WIP).
+                  </span>
+                </li>
+                <li className="flex items-start gap-2 text-xs text-slate-300/80">
+                  <span
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    aria-hidden="true"
+                  ></span>
+                  <span>
+                    Implementing secrets management for users and
+                    machine-to-machine (planned).
+                  </span>
+                </li>
+                <li className="flex items-start gap-2 text-xs text-slate-300/80">
+                  <span
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    aria-hidden="true"
+                  ></span>
+                  <span>
+                    Implement Kubernetes for easier horizontal scaling
+                    (planned).
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <div
             className="rounded-lg border border-white/10 p-3"
             role="listitem"
@@ -136,12 +196,12 @@ export default function HomePage() {
                 <span className="text-s text-slate-300/80">Linux Engineer</span>
               </div>
               <div>
-                <span className="text-xs text-slate-300/80">2024-present</span>
+                <span className="text-xs text-slate-300/80">2024-2026</span>
               </div>
               <ul className="space-y-1" aria-label="Key achievements at SORSIT">
                 <li className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span
-                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-secondary"
                     aria-hidden="true"
                   ></span>
                   <span>
@@ -150,14 +210,14 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span
-                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-secondary"
                     aria-hidden="true"
                   ></span>
                   <span>Implemented high-availability OLVM environments.</span>
                 </li>
                 <li className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span
-                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-secondary"
                     aria-hidden="true"
                   ></span>
                   <span>
@@ -167,7 +227,7 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-start gap-2 text-xs text-slate-300/80">
                   <span
-                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-accent"
+                    className="inline-flex h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 bg-brand-secondary"
                     aria-hidden="true"
                   ></span>
                   <span>
